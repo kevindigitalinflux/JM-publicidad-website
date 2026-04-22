@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "quote": "Get a Quote"
+  },
+  "hero": {
+    "badge": "Studio & Agency",
+    "headline_1": "Precision",
+    "headline_2": "Strategy.",
+    "headline_3": "Tactile",
+    "headline_4": "Execution.",
+    "subheadline": "Transforming high-level advertising vision into meticulously crafted print reality. We are the architectural press for modern brands.",
+    "cta_primary": "Get a Quote",
+    "cta_secondary": "Our Work"
+  },
+  "precision": {
+    "title": "The Precision Studio",
+    "feature_1_title": "Architectural Precision",
+    "feature_1_body": "Every campaign is treated as a blueprint. We don't just print; we engineer visual communication that feels substantial in the hand and impactful in the mind.",
+    "feature_2_title": "Master Print Production",
+    "feature_2_body": "From large-format installations to bespoke stationery, our studio utilises the finest premium stocks and precise ink-layering techniques."
+  },
+  "services": {
+    "title": "Our Services",
+    "card_1": "Advertising Strategy",
+    "card_2": "Large Format Print",
+    "card_3": "Brand Identity",
+    "card_4": "Premium Finishing"
+  },
+  "cta": {
+    "headline_1": "Ready to build",
+    "headline_2": "your brand's",
+    "headline_3": "presence?",
+    "body": "Contact our consultants to discuss technical specs and strategy.",
+    "button": "Start a Project"
+  },
+  "footer": {
+    "tagline": "Expert advertising strategy and precision print production studio.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "specs": "Studio Specs",
+    "copyright": "© 2024 JM Publicidad. Precision Studio."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "name": "Full Name",
+    "email": "Email Address",
+    "company": "Company (optional)",
+    "service": "Service of Interest",
+    "message": "Message",
+    "budget": "Budget Range (optional)",
+    "submit": "Send Enquiry",
+    "success": "Thank you — we'll be in touch shortly.",
+    "error": "Something went wrong. Please try again."
+  }
+}

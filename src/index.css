@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --jm-primary:    #536049;
+  --jm-accent:     #6c7960;
+  --jm-bg:         #fbf9f5;
+  --jm-bg-section: #f6f3ef;
+  --jm-bg-card:    #f0edea;
+  --jm-heading:    #1b1c1a;
+  --jm-body:       #454840;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--jm-bg);
+  color: var(--jm-body);
+}

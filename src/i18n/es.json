@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "portfolio": "Portafolio",
+    "contact": "Contacto",
+    "quote": "Pedir Presupuesto"
+  },
+  "hero": {
+    "badge": "Estudio & Agencia",
+    "headline_1": "Precisión",
+    "headline_2": "Estratégica.",
+    "headline_3": "Ejecución",
+    "headline_4": "Táctil.",
+    "subheadline": "Transformamos la visión publicitaria en realidad impresa meticulosamente elaborada. Somos la imprenta arquitectónica para marcas modernas.",
+    "cta_primary": "Pedir Presupuesto",
+    "cta_secondary": "Nuestros Trabajos"
+  },
+  "precision": {
+    "title": "El Estudio de Precisión",
+    "feature_1_title": "Precisión Arquitectónica",
+    "feature_1_body": "Cada campaña se trata como un plano de construcción. No solo imprimimos; diseñamos comunicación visual que se siente sólida en la mano e impactante en la mente.",
+    "feature_2_title": "Producción de Impresión Maestra",
+    "feature_2_body": "Desde instalaciones de gran formato hasta papelería a medida, nuestro estudio utiliza los mejores materiales premium y técnicas precisas de capas de tinta."
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "card_1": "Estrategia Publicitaria",
+    "card_2": "Impresión Gran Formato",
+    "card_3": "Identidad de Marca",
+    "card_4": "Acabados Premium"
+  },
+  "cta": {
+    "headline_1": "¿Listo para construir",
+    "headline_2": "la presencia",
+    "headline_3": "de tu marca?",
+    "body": "Contacta a nuestros consultores para hablar de especificaciones técnicas y estrategia.",
+    "button": "Iniciar un Proyecto"
+  },
+  "footer": {
+    "tagline": "Estudio de estrategia publicitaria y producción de impresión de precisión.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "specs": "Especificaciones del Estudio",
+    "copyright": "© 2024 JM Publicidad. Estudio de Precisión."
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "name": "Nombre Completo",
+    "email": "Correo Electrónico",
+    "company": "Empresa (opcional)",
+    "service": "Servicio de Interés",
+    "message": "Mensaje",
+    "budget": "Rango de Presupuesto (opcional)",
+    "submit": "Enviar Consulta",
+    "success": "Gracias — nos pondremos en contacto pronto.",
+    "error": "Algo salió mal. Por favor, inténtalo de nuevo."
+  }
+}
