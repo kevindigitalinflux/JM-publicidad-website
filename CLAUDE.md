@@ -284,9 +284,20 @@ vite.config.ts
 
 ## Current Status
 
-**Working:** —
-**In progress:** Project setup
-**Not yet started:** All pages and components
+**Working:**
+- Supabase connection — `enquiries` table live, RLS enabled (anon INSERT only)
+- Contact form (`/contact`) — full form, EN/ES i18n, submits to Supabase, success/error states
+- Routing — all 4 routes registered (`/`, `/services`, `/portfolio`, `/contact`)
+- i18n — EN and ES translations in place for all existing sections
+- Initial homepage sections scaffolded (Hero, Precision, Services overview, CTA)
+
+**Not yet started:**
+- Homepage — needs full design implementation from Figma
+- Services page — needs all 6 categories built out
+- Portfolio gallery — needs client photography integrated
+- Quote request flow
+- Cloudflare Pages deployment
+
 **Known issues:** —
 
 ---
