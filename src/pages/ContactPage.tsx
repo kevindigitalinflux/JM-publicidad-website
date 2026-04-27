@@ -70,14 +70,20 @@ export function ContactPage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) { setStatus('error'); return; }
+    if (form.name.trim().length < 2) { setStatus('error'); return; }
+    if (form.message.trim().length < 5) { setStatus('error'); return; }
+
     setStatus('loading');
 
     const { error } = await supabase.from('enquiries').insert({
-      name: form.name,
-      email: form.email,
-      company: form.company || null,
+      name: form.name.trim().slice(0, 100),
+      email: form.email.trim().slice(0, 254),
+      company: form.company ? form.company.trim().slice(0, 100) : null,
       service: form.service || null,
-      message: form.message,
+      message: form.message.trim().slice(0, 2000),
       budget_range: form.budget_range || null,
       locale: i18n.language.startsWith('es') ? 'es' : 'en',
     });
@@ -115,6 +121,7 @@ export function ContactPage() {
                 type="text"
                 name="name"
                 required
+                maxLength={100}
                 value={form.name}
                 onChange={handleChange}
                 className="w-full rounded-xl border border-[#d6d3ce] bg-white px-4 py-3 text-[#1b1c1a] placeholder-[#9e9c98] font-inter focus:outline-none focus:ring-2 focus:ring-[#536049]"
@@ -130,6 +137,7 @@ export function ContactPage() {
                 type="email"
                 name="email"
                 required
+                maxLength={254}
                 value={form.email}
                 onChange={handleChange}
                 className="w-full rounded-xl border border-[#d6d3ce] bg-white px-4 py-3 text-[#1b1c1a] placeholder-[#9e9c98] font-inter focus:outline-none focus:ring-2 focus:ring-[#536049]"
@@ -144,6 +152,7 @@ export function ContactPage() {
               <input
                 type="text"
                 name="company"
+                maxLength={100}
                 value={form.company}
                 onChange={handleChange}
                 className="w-full rounded-xl border border-[#d6d3ce] bg-white px-4 py-3 text-[#1b1c1a] placeholder-[#9e9c98] font-inter focus:outline-none focus:ring-2 focus:ring-[#536049]"
@@ -177,6 +186,7 @@ export function ContactPage() {
                 name="message"
                 required
                 rows={5}
+                maxLength={2000}
                 value={form.message}
                 onChange={handleChange}
                 className="w-full rounded-xl border border-[#d6d3ce] bg-white px-4 py-3 text-[#1b1c1a] placeholder-[#9e9c98] font-inter focus:outline-none focus:ring-2 focus:ring-[#536049] resize-none"
