@@ -252,6 +252,20 @@ vite.config.ts
 
 ---
 
+## Security Status (last audited April 2026)
+
+All items confirmed PASS or N/A:
+- `.env` gitignored, never committed
+- No hardcoded secrets in any source file
+- RLS enabled on `enquiries` — anon INSERT only
+- Rate limiting active on Cloudflare Pages
+- CORS restricted to `https://jm-publicidad-website.pages.dev` in Supabase
+- Anon key only in frontend, service role key never referenced
+- `main` branch protected — PR + 1 approval required, force push blocked
+- No protected routes (no auth in MVP — revisit when admin panel is added)
+
+---
+
 ## Security — Non-Negotiable
 
 - `.env` in `.gitignore` before the first commit
