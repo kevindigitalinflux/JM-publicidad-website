@@ -290,13 +290,14 @@ vite.config.ts
 - Routing — all 4 routes registered (`/`, `/services`, `/portfolio`, `/contact`)
 - i18n — EN and ES translations in place for all existing sections
 - Initial homepage sections scaffolded (Hero, Precision, Services overview, CTA)
+- Cloudflare Pages — live at `https://jm-publicidad-website.pages.dev`, auto-deploy from GitHub `main`
 
 **Not yet started:**
 - Homepage — needs full design implementation from Figma
 - Services page — needs all 6 categories built out
 - Portfolio gallery — needs client photography integrated
 - Quote request flow
-- Cloudflare Pages deployment
+- Cloudflare Pages deployment — `https://jm-publicidad-website.pages.dev`
 
 **Known issues:** —
 
