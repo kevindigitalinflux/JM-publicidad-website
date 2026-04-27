@@ -21,7 +21,7 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-[12px] bg-[rgba(251,249,245,0.85)] border-b border-[rgba(83,96,73,0.08)]">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <div className="w-[18px] h-[12px] flex flex-col justify-between">
+          <div className="md:hidden w-[18px] h-[12px] flex flex-col justify-between">
             <span className="block h-[2px] bg-jm-primary rounded-full" />
             <span className="block h-[2px] bg-jm-primary rounded-full w-3/4" />
             <span className="block h-[2px] bg-jm-primary rounded-full" />
