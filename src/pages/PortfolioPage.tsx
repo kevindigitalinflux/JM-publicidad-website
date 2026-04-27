@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
+/** Portfolio page — client photography gallery showcasing completed work */
 export function PortfolioPage() {
   const { t } = useTranslation();
 

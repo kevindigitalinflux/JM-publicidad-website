@@ -1,68 +1,32 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../lib/supabase';
+import { EnquiryForm } from '../components/EnquiryForm';
 
 interface FormState {
-  name: string;
-  email: string;
-  company: string;
-  service: string;
-  message: string;
-  budget_range: string;
+  name: string; email: string; company: string;
+  service: string; message: string; budget_range: string;
 }
 
-const INITIAL_FORM: FormState = {
-  name: '',
-  email: '',
-  company: '',
-  service: '',
-  message: '',
-  budget_range: '',
+const INITIAL_FORM: FormState = { name: '', email: '', company: '', service: '', message: '', budget_range: '' };
+
+const SERVICE_OPTIONS = {
+  en: ['Outdoor Signage', 'Vehicle Branding', 'Digital Advertising', 'Promotional Merch', 'Printed Media', 'Other'],
+  es: ['Señalización Exterior', 'Rotulación de Vehículos', 'Publicidad Digital', 'Merchandising Promocional', 'Medios Impresos', 'Otro'],
 };
 
-const SERVICE_OPTIONS_EN = [
-  'Outdoor Signage',
-  'Vehicle Branding',
-  'Digital Advertising',
-  'Promotional Merch',
-  'Printed Media',
-  'Other',
-];
+const BUDGET_OPTIONS = {
+  en: ['Under €500', '€500 – €2,000', '€2,000 – €5,000', '€5,000 – €10,000', 'Over €10,000'],
+  es: ['Menos de €500', '€500 – €2.000', '€2.000 – €5.000', '€5.000 – €10.000', 'Más de €10.000'],
+};
 
-const SERVICE_OPTIONS_ES = [
-  'Señalización Exterior',
-  'Rotulación de Vehículos',
-  'Publicidad Digital',
-  'Merchandising Promocional',
-  'Medios Impresos',
-  'Otro',
-];
-
-const BUDGET_OPTIONS_EN = [
-  'Under €500',
-  '€500 – €2,000',
-  '€2,000 – €5,000',
-  '€5,000 – €10,000',
-  'Over €10,000',
-];
-
-const BUDGET_OPTIONS_ES = [
-  'Menos de €500',
-  '€500 – €2.000',
-  '€2.000 – €5.000',
-  '€5.000 – €10.000',
-  'Más de €10.000',
-];
-
-/** Contact page with enquiry form wired to Supabase enquiries table */
+/** Contact page — holds enquiry form state and Supabase submit logic */
 export function ContactPage() {
   const { t, i18n } = useTranslation();
   const [form, setForm] = useState<FormState>(INITIAL_FORM);
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  const isES = i18n.language.startsWith('es');
-  const serviceOptions = isES ? SERVICE_OPTIONS_ES : SERVICE_OPTIONS_EN;
-  const budgetOptions = isES ? BUDGET_OPTIONS_ES : BUDGET_OPTIONS_EN;
+  const lang = i18n.language.startsWith('es') ? 'es' : 'en';
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -70,12 +34,10 @@ export function ContactPage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(form.email)) { setStatus('error'); return; }
     if (form.name.trim().length < 2) { setStatus('error'); return; }
     if (form.message.trim().length < 5) { setStatus('error'); return; }
-
     setStatus('loading');
 
     const { error } = await supabase.from('enquiries').insert({
@@ -85,15 +47,10 @@ export function ContactPage() {
       service: form.service || null,
       message: form.message.trim().slice(0, 2000),
       budget_range: form.budget_range || null,
-      locale: i18n.language.startsWith('es') ? 'es' : 'en',
+      locale: lang,
     });
 
-    if (error) {
-      setStatus('error');
-    } else {
-      setStatus('success');
-      setForm(INITIAL_FORM);
-    }
+    if (error) { setStatus('error'); } else { setStatus('success'); setForm(INITIAL_FORM); }
   }
 
   return (
@@ -111,118 +68,14 @@ export function ContactPage() {
             <p className="font-manrope text-xl font-bold">{t('contact.success')}</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-5">
-            {/* Name */}
-            <div>
-              <label className="block text-sm font-medium text-[#1b1c1a] mb-1 font-inter">
-                {t('contact.name')} <span className="text-[#536049]">*</span>
-              </label>
-              <input
-                type="text"
-                name="name"
-                required
-                maxLength={100}
-                value={form.name}
-                onChange={handleChange}
-                className="w-full rounded-xl border border-[#d6d3ce] bg-white px-4 py-3 text-[#1b1c1a] placeholder-[#9e9c98] font-inter focus:outline-none focus:ring-2 focus:ring-[#536049]"
-              />
-            </div>
-
-            {/* Email */}
-            <div>
-              <label className="block text-sm font-medium text-[#1b1c1a] mb-1 font-inter">
-                {t('contact.email')} <span className="text-[#536049]">*</span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                required
-                maxLength={254}
-                value={form.email}
-                onChange={handleChange}
-                className="w-full rounded-xl border border-[#d6d3ce] bg-white px-4 py-3 text-[#1b1c1a] placeholder-[#9e9c98] font-inter focus:outline-none focus:ring-2 focus:ring-[#536049]"
-              />
-            </div>
-
-            {/* Company */}
-            <div>
-              <label className="block text-sm font-medium text-[#1b1c1a] mb-1 font-inter">
-                {t('contact.company')}
-              </label>
-              <input
-                type="text"
-                name="company"
-                maxLength={100}
-                value={form.company}
-                onChange={handleChange}
-                className="w-full rounded-xl border border-[#d6d3ce] bg-white px-4 py-3 text-[#1b1c1a] placeholder-[#9e9c98] font-inter focus:outline-none focus:ring-2 focus:ring-[#536049]"
-              />
-            </div>
-
-            {/* Service */}
-            <div>
-              <label className="block text-sm font-medium text-[#1b1c1a] mb-1 font-inter">
-                {t('contact.service')}
-              </label>
-              <select
-                name="service"
-                value={form.service}
-                onChange={handleChange}
-                className="w-full rounded-xl border border-[#d6d3ce] bg-white px-4 py-3 text-[#1b1c1a] font-inter focus:outline-none focus:ring-2 focus:ring-[#536049]"
-              >
-                <option value="">—</option>
-                {serviceOptions.map(opt => (
-                  <option key={opt} value={opt}>{opt}</option>
-                ))}
-              </select>
-            </div>
-
-            {/* Message */}
-            <div>
-              <label className="block text-sm font-medium text-[#1b1c1a] mb-1 font-inter">
-                {t('contact.message')} <span className="text-[#536049]">*</span>
-              </label>
-              <textarea
-                name="message"
-                required
-                rows={5}
-                maxLength={2000}
-                value={form.message}
-                onChange={handleChange}
-                className="w-full rounded-xl border border-[#d6d3ce] bg-white px-4 py-3 text-[#1b1c1a] placeholder-[#9e9c98] font-inter focus:outline-none focus:ring-2 focus:ring-[#536049] resize-none"
-              />
-            </div>
-
-            {/* Budget */}
-            <div>
-              <label className="block text-sm font-medium text-[#1b1c1a] mb-1 font-inter">
-                {t('contact.budget')}
-              </label>
-              <select
-                name="budget_range"
-                value={form.budget_range}
-                onChange={handleChange}
-                className="w-full rounded-xl border border-[#d6d3ce] bg-white px-4 py-3 text-[#1b1c1a] font-inter focus:outline-none focus:ring-2 focus:ring-[#536049]"
-              >
-                <option value="">—</option>
-                {budgetOptions.map(opt => (
-                  <option key={opt} value={opt}>{opt}</option>
-                ))}
-              </select>
-            </div>
-
-            {status === 'error' && (
-              <p className="text-red-600 text-sm font-inter">{t('contact.error')}</p>
-            )}
-
-            <button
-              type="submit"
-              disabled={status === 'loading'}
-              className="w-full bg-[#536049] hover:bg-[#6c7960] disabled:opacity-60 text-white font-inter font-semibold rounded-xl px-6 py-4 transition-colors duration-200"
-            >
-              {status === 'loading' ? '…' : t('contact.submit')}
-            </button>
-          </form>
+          <EnquiryForm
+            form={form}
+            serviceOptions={SERVICE_OPTIONS[lang]}
+            budgetOptions={BUDGET_OPTIONS[lang]}
+            status={status}
+            onChange={handleChange}
+            onSubmit={handleSubmit}
+          />
         )}
       </div>
     </main>

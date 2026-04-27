@@ -8,6 +8,7 @@ import { ServicesPage } from './pages/ServicesPage';
 import { PortfolioPage } from './pages/PortfolioPage';
 import { ContactPage } from './pages/ContactPage';
 
+/** Root application component — BrowserRouter, shared layout, and all routes */
 export function App() {
   return (
     <BrowserRouter>

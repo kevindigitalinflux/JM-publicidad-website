@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
+/** Services page — all 6 service categories with descriptions (EN/ES) */
 export function ServicesPage() {
   const { t } = useTranslation();
 
