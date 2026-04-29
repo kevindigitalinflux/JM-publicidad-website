@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../lib/supabase';
 import { EnquiryForm } from '../components/EnquiryForm';
+import { SEO } from '../components/SEO';
 
 /** Figma asset — Elena Rodriguez portrait (expires 7 days; replace with hosted asset) */
 const ELENA_IMG = 'https://www.figma.com/api/mcp/asset/524e9cee-b4d9-4e80-b1f9-850e92acb8df';
@@ -100,6 +101,11 @@ export function ContactPage() {
 
   return (
     <main className="bg-jm-bg min-h-screen pt-[60px]">
+      <SEO
+        title="Contact Us — Get a Quote | JM Publicidad"
+        description="Contact JM Publicidad for a quote on outdoor signage, vehicle branding, print production, or digital advertising. Studio located in Madrid's Design District."
+        path="/contact"
+      />
 
       {/* Hero */}
       <section className="px-6 pt-10 pb-12 max-w-lg mx-auto lg:max-w-3xl">
@@ -135,7 +141,7 @@ export function ContactPage() {
 
       {/* Map */}
       <section className="relative h-64 overflow-hidden mb-12">
-        <img src={MAP_IMG} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={MAP_IMG} alt="JM Publicidad studio location — Design District, Madrid, Spain" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-jm-primary/10 mix-blend-multiply" />
       </section>
 

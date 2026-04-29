@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { ServicesBento } from '../components/sections/ServicesBento';
+import { SEO } from '../components/SEO';
 
 /** Studio Specs spec-sheet — lead time, software, materials */
 function StudioSpecs() {
@@ -37,6 +38,11 @@ export function ServicesPage() {
 
   return (
     <main className="bg-jm-bg min-h-screen pt-[60px]">
+      <SEO
+        title="Services — Outdoor Signage, Print &amp; Branding | JM Publicidad"
+        description="Creative campaigns, digital marketing, premium print media production, and brand identity from JM Publicidad. Madrid-based studio serving clients across Spain."
+        path="/services"
+      />
 
       {/* Hero */}
       <section className="px-6 pt-10 pb-12 max-w-lg mx-auto lg:max-w-3xl">

@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { PortfolioGrid } from '../components/sections/PortfolioGrid';
 import { TestimonialsSection } from '../components/sections/TestimonialsSection';
+import { SEO } from '../components/SEO';
 
 /** Studio Capabilities spec sheet */
 function StudioCapabilities() {
@@ -40,6 +41,11 @@ export function PortfolioPage() {
 
   return (
     <main className="bg-jm-bg min-h-screen pt-[60px]">
+      <SEO
+        title="Portfolio — Advertising &amp; Print Projects | JM Publicidad"
+        description="Browse JM Publicidad's portfolio of precision print production and advertising campaigns — large-format signage, brand identity, packaging, and vehicle branding."
+        path="/portfolio"
+      />
 
       {/* Hero */}
       <section className="px-6 pt-10 pb-12 max-w-lg mx-auto lg:max-w-3xl">
