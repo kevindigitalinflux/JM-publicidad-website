@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import UnicornScene from 'unicornstudio-react';
 
 /** Landing page hero — headline, subtext, dual CTAs */
 export function HeroSection() {
@@ -7,8 +8,19 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen bg-jm-bg flex items-center overflow-hidden pt-20">
-      {/* Subtle radial blur accent */}
-      <div className="absolute bottom-0 right-0 w-80 h-80 rounded-xl bg-jm-primary/5 blur-[32px] pointer-events-none" />
+      {/* Unicorn Studio animated background — pointer-events disabled so CTAs remain interactive */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <UnicornScene
+            projectId="NUtfgbuISPQpTZ0NzzZa"
+            width="1440px"
+            height="900px"
+            scale={1}
+            dpi={1.5}
+            sdkUrl="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@2.1.9/dist/unicornStudio.umd.js"
+          />
+        </div>
+      </div>
 
       <div className="relative w-full max-w-6xl mx-auto px-6 py-24">
         <div className="max-w-[448px]">
