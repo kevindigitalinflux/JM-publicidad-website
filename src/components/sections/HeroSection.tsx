@@ -1,24 +1,46 @@
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import UnicornScene from 'unicornstudio-react';
+
+declare global {
+  interface Window {
+    UnicornStudio?: { isInitialized: boolean; init: () => void };
+  }
+}
 
 /** Landing page hero — headline, subtext, dual CTAs */
 export function HeroSection() {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    const u = window.UnicornStudio;
+    if (u && u.init) {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => u.init());
+      } else {
+        u.init();
+      }
+    } else {
+      window.UnicornStudio = { isInitialized: false, init: () => {} };
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.1.9/dist/unicornStudio.umd.js';
+      script.onload = () => {
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', () => window.UnicornStudio!.init());
+        } else {
+          window.UnicornStudio!.init();
+        }
+      };
+      (document.head || document.body).appendChild(script);
+    }
+  }, []);
 
   return (
     <section className="relative min-h-screen bg-jm-bg flex items-center overflow-hidden pt-20">
       {/* Unicorn Studio animated background — pointer-events disabled so CTAs remain interactive */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <UnicornScene
-            projectId="NUtfgbuISPQpTZ0NzzZa"
-            width="1440px"
-            height="900px"
-            scale={1}
-            dpi={1.5}
-            sdkUrl="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@2.1.9/dist/unicornStudio.umd.js"
-          />
+          <div style={{ width: '1440px', height: '900px' }} data-us-project="NUtfgbuISPQpTZ0NzzZa" />
         </div>
       </div>
 
