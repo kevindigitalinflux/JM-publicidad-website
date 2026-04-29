@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 declare global {
   interface Window {
     UnicornStudio?: { isInitialized: boolean; init: () => void };
+    __unicornSDKReady?: boolean;
   }
 }
 
@@ -13,26 +14,15 @@ export function HeroSection() {
   const { t } = useTranslation();
 
   useEffect(() => {
-    const u = window.UnicornStudio;
-    if (u && u.init) {
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => u.init());
+    // SDK is loaded by index.html; poll until init is available then call it
+    const tryInit = () => {
+      if (typeof window.UnicornStudio?.init === 'function') {
+        window.UnicornStudio.init();
       } else {
-        u.init();
+        setTimeout(tryInit, 50);
       }
-    } else {
-      window.UnicornStudio = { isInitialized: false, init: () => {} };
-      const script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.1.9/dist/unicornStudio.umd.js';
-      script.onload = () => {
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', () => window.UnicornStudio!.init());
-        } else {
-          window.UnicornStudio!.init();
-        }
-      };
-      (document.head || document.body).appendChild(script);
-    }
+    };
+    tryInit();
   }, []);
 
   return (
