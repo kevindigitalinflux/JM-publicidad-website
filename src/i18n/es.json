@@ -44,8 +44,78 @@
     "specs": "Especificaciones del Estudio",
     "copyright": "© 2024 JM Publicidad. Estudio de Precisión."
   },
+  "services_page": {
+    "label": "Nuestra Experiencia",
+    "title": "Creando el Futuro del Storytelling de Marca",
+    "description": "Desde la producción de impresión táctil hasta campañas digitales de alta velocidad, unimos la precisión arquitectónica con la expresión creativa.",
+    "creative_campaigns": {
+      "title": "Campañas Creativas",
+      "description": "Estrategias conceptuales que resuenan. No solo creamos anuncios; construimos narrativas que demandan atención y generan conversación cultural.",
+      "cta": "Consultar"
+    },
+    "digital_marketing": {
+      "title": "Marketing Digital",
+      "badge": "Crecimiento",
+      "description": "El rendimiento basado en datos se combina con la estética editorial. SEO, SEM y gestión de redes sociales con foco en métricas de conversión premium.",
+      "feature_1": "Optimización de Rendimiento",
+      "feature_2": "Estrategia de Contenido",
+      "cta": "Saber Más"
+    },
+    "print_media": {
+      "title": "Producción de Medios Impresos",
+      "description": "El corazón de nuestro estudio. Especializados en impresión gran formato premium, materiales táctiles y señalización arquitectónica de precisión.",
+      "spec_1_label": "Resolución",
+      "spec_1_value": "1200 PPP",
+      "spec_2_label": "Acabado",
+      "spec_2_value": "Seda Mate",
+      "cta": "Iniciar Producción"
+    },
+    "branding": {
+      "title": "Identidad y Marca",
+      "description": "Desarrollamos sistemas visuales atemporales. Desde la arquitectura del logotipo hasta guías de estilo completas para garantizar consistencia en cada punto de contacto.",
+      "cta": "Ver Portafolio"
+    },
+    "specs": {
+      "title": "Especificaciones del Estudio",
+      "lead_time_label": "Plazo de Entrega",
+      "lead_time_value": "10-14 Días Laborables",
+      "software_label": "Software",
+      "software_value": "Adobe CC Mastery",
+      "materials_label": "Materiales",
+      "materials_value": "Origen Sostenible"
+    }
+  },
+  "portfolio": {
+    "title": "Portafolio",
+    "description": "Una colección seleccionada de publicidad arquitectónica y producciones de impresión de precisión desde nuestro estudio al mundo.",
+    "project_1_category": "Producción de Impresión",
+    "project_1_title": "Modernismo Revivido",
+    "project_1_client": "Cliente: Studio Althea",
+    "project_2_title": "Serie Cobre",
+    "project_2_client": "Cliente: Luna & Co",
+    "project_3_title": "Lienzo Urbano",
+    "project_3_client": "Cliente: Chronos",
+    "project_4_category": "Identidad de Marca",
+    "project_4_title": "Packaging Etéreo",
+    "project_4_client": "Cliente: Nordis Luxe",
+    "capabilities_title": "Capacidades del Estudio",
+    "format_range_label": "Rango de Formatos",
+    "format_range_value": "De tarjetas de visita a vallas de 48 hojas. Tamaños de precisión para cada medio.",
+    "ink_systems_label": "Sistemas de Tinta",
+    "ink_systems_value": "Concordancia Pantone, tintas a base de soja y acabados exteriores resistentes a los UV.",
+    "stock_library_label": "Biblioteca de Materiales",
+    "stock_library_value": "Papeles de algodón italiano importados, materiales reciclados sostenibles y vinilos de lujo.",
+    "testimonials_title": "Voces del Estudio",
+    "t1_quote": "\"JM Publicidad no solo imprime diseños; entienden el alma arquitectónica de nuestra marca. La calidad táctil no tiene igual.\"",
+    "t1_name": "Sarah Miller",
+    "t1_role": "Directora Creativa, Althea",
+    "t2_quote": "\"Su atención al detalle en la Serie Cobre fue fenomenal. La precisión en el estampado en lámina es la mejor de la ciudad.\"",
+    "t2_name": "Julian Lowe",
+    "t2_role": "Fundador, Luna & Co"
+  },
   "contact": {
     "title": "Contáctanos",
+    "subheadline": "Transformamos las visiones arquitectónicas en obras maestras de marketing tangibles mediante impresión de precisión y diseño estratégico.",
     "name": "Nombre Completo",
     "email": "Correo Electrónico",
     "company": "Empresa (opcional)",
@@ -54,6 +124,17 @@
     "budget": "Rango de Presupuesto (opcional)",
     "submit": "Enviar Consulta",
     "success": "Gracias — nos pondremos en contacto pronto.",
-    "error": "Algo salió mal. Por favor, inténtalo de nuevo."
+    "error": "Algo salió mal. Por favor, inténtalo de nuevo.",
+    "studio_specs_title": "Especificaciones del Estudio",
+    "headquarters_label": "Sede",
+    "headquarters_value": "Av. de la Industria 45, Distrito de Diseño, Madrid, España",
+    "phone_label": "Línea Directa",
+    "phone_value": "+34 912 345 678",
+    "email_label": "Consultas Generales",
+    "email_value": "studio@jmpublicidad.com",
+    "connect_label": "Conectar",
+    "testimonial_quote": "\"El nivel de precisión que JM Publicidad aporta a la impresión arquitectónica de gran formato no tiene igual. No solo imprimen; construyen atmósferas.\"",
+    "testimonial_name": "Elena Rodríguez",
+    "testimonial_role": "Diseñadora Principal, Archgroup"
   }
 }

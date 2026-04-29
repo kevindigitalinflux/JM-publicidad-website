@@ -44,16 +44,97 @@
     "specs": "Studio Specs",
     "copyright": "© 2024 JM Publicidad. Precision Studio."
   },
+  "services_page": {
+    "label": "Our Expertise",
+    "title": "Crafting the Future of Brand Storytelling",
+    "description": "From tactile print production to high-velocity digital campaigns, we bridge the gap between architectural precision and creative expression.",
+    "creative_campaigns": {
+      "title": "Creative Campaigns",
+      "description": "Conceptual strategies that resonate. We don't just create ads; we build narratives that demand attention and drive cultural conversation.",
+      "cta": "Inquire"
+    },
+    "digital_marketing": {
+      "title": "Digital Marketing",
+      "badge": "Growth",
+      "description": "Data-driven performance meets editorial aesthetic. SEO, SEM, and Social media management with a focus on high-end conversion metrics.",
+      "feature_1": "Performance Optimization",
+      "feature_2": "Content Strategy",
+      "cta": "Learn More"
+    },
+    "print_media": {
+      "title": "Print Media Production",
+      "description": "The heart of our studio. We specialize in premium large-format printing, texture-rich tactile materials, and precision architectural signage.",
+      "spec_1_label": "Resolution",
+      "spec_1_value": "1200 DPI",
+      "spec_2_label": "Finish",
+      "spec_2_value": "Matte Silk",
+      "cta": "Start Production"
+    },
+    "branding": {
+      "title": "Identity & Branding",
+      "description": "Developing timeless visual systems. From logo architecture to full brand style guides that ensure consistency across every touchpoint.",
+      "cta": "View Portfolio"
+    },
+    "specs": {
+      "title": "Studio Specifications",
+      "lead_time_label": "Lead Time",
+      "lead_time_value": "10-14 Business Days",
+      "software_label": "Software",
+      "software_value": "Adobe CC Mastery",
+      "materials_label": "Materials",
+      "materials_value": "Sustainably Sourced"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "description": "A curated collection of architectural advertising and precision print productions from our studio to the world.",
+    "project_1_category": "Print Production",
+    "project_1_title": "Modernism Revived",
+    "project_1_client": "Client: Studio Althea",
+    "project_2_title": "Copper Series",
+    "project_2_client": "Client: Luna & Co",
+    "project_3_title": "Urban Canvas",
+    "project_3_client": "Client: Chronos",
+    "project_4_category": "Brand Identity",
+    "project_4_title": "Ethereal Packaging",
+    "project_4_client": "Client: Nordis Luxe",
+    "capabilities_title": "Studio Capabilities",
+    "format_range_label": "Format Range",
+    "format_range_value": "Business cards to 48-sheet billboards. Precision sizing for every medium.",
+    "ink_systems_label": "Ink Systems",
+    "ink_systems_value": "Pantone matching, soy-based inks, and UV-resistant outdoor finishes.",
+    "stock_library_label": "Stock Library",
+    "stock_library_value": "Imported Italian cotton papers, sustainable recycled stocks, and luxury vinyls.",
+    "testimonials_title": "Voices from the Studio",
+    "t1_quote": "\"JM Publicidad doesn't just print designs; they understand the architectural soul of our brand. The tactile quality is unmatched.\"",
+    "t1_name": "Sarah Miller",
+    "t1_role": "Creative Director, Althea",
+    "t2_quote": "\"Their attention to detail on the Copper Series was phenomenal. The precision in the foil stamping is the best in the city.\"",
+    "t2_name": "Julian Lowe",
+    "t2_role": "Founder, Luna & Co"
+  },
   "contact": {
-    "title": "Get in Touch",
+    "title": "Get In Touch",
+    "subheadline": "Transforming architectural visions into tangible marketing masterpieces through precision print and strategic design.",
     "name": "Full Name",
     "email": "Email Address",
     "company": "Company (optional)",
-    "service": "Service of Interest",
+    "service": "Service Interested In",
     "message": "Message",
     "budget": "Budget Range (optional)",
-    "submit": "Send Enquiry",
+    "submit": "Submit Inquiry",
     "success": "Thank you — we'll be in touch shortly.",
-    "error": "Something went wrong. Please try again."
+    "error": "Something went wrong. Please try again.",
+    "studio_specs_title": "Studio Specs",
+    "headquarters_label": "Headquarters",
+    "headquarters_value": "Av. de la Industria 45, Design District, Madrid, Spain",
+    "phone_label": "Direct Line",
+    "phone_value": "+34 912 345 678",
+    "email_label": "General Inquiries",
+    "email_value": "studio@jmpublicidad.com",
+    "connect_label": "Connect",
+    "testimonial_quote": "\"The level of precision JM Publicidad brings to architectural large-format printing is unmatched. They don't just print; they build atmospheres.\"",
+    "testimonial_name": "Elena Rodriguez",
+    "testimonial_role": "Lead Designer, Archgroup"
   }
 }
