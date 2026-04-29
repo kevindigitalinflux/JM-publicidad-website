@@ -51,6 +51,9 @@
     "creative_campaigns": {
       "title": "Campañas Creativas",
       "description": "Estrategias conceptuales que resuenan. No solo creamos anuncios; construimos narrativas que demandan atención y generan conversación cultural.",
+      "feature_1": "Estrategia multicanal — impresión, digital y exterior",
+      "feature_2": "Del concepto al activo creativo terminado",
+      "feature_3": "Adaptación de campaña a todos los formatos de medios",
       "cta": "Consultar"
     },
     "digital_marketing": {
@@ -64,6 +67,9 @@
     "print_media": {
       "title": "Producción de Medios Impresos",
       "description": "El corazón de nuestro estudio. Especializados en impresión gran formato premium, materiales táctiles y señalización arquitectónica de precisión.",
+      "feature_1": "Impresión gran formato hasta 1200 PPP de resolución",
+      "feature_2": "Acabados resistentes a UV, impermeables y anti-grafiti",
+      "feature_3": "Servicio llave en mano — producción hasta instalación en sitio",
       "spec_1_label": "Resolución",
       "spec_1_value": "1200 PPP",
       "spec_2_label": "Acabado",
@@ -73,7 +79,25 @@
     "branding": {
       "title": "Identidad y Marca",
       "description": "Desarrollamos sistemas visuales atemporales. Desde la arquitectura del logotipo hasta guías de estilo completas para garantizar consistencia en cada punto de contacto.",
+      "feature_1": "Arquitectura del logotipo y diseño de identidad visual",
+      "feature_2": "Guías de marca que incluyen tipografía, color y maquetación",
+      "feature_3": "Producción de activos multiformato para impresión, digital y señalización",
       "cta": "Ver Portafolio"
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "q1": "¿Cuánto tiempo tarda la producción?",
+      "a1": "Los pedidos estándar se completan en 10–14 días laborables. La producción express (5–7 días) está disponible bajo petición. El plazo depende del tipo de material, acabado y volumen del pedido — los plazos exactos se confirman en cada presupuesto.",
+      "q2": "¿Ofrecéis diseño además de impresión?",
+      "a2": "Sí. JM Publicidad ofrece un servicio integral: concepto creativo, diseño gráfico, producción de impresión e instalación en sitio. Puedes darnos un briefing desde una idea inicial o entregar archivos listos para imprimir.",
+      "q3": "¿Qué materiales y acabados ofrecéis?",
+      "a3": "Nuestra biblioteca de materiales incluye papeles de algodón italiano importados, papeles reciclados sostenibles, vinilos de lujo, laminados exteriores resistentes a UV, revestimientos anti-grafiti y tintas concordadas con Pantone. Las recomendaciones de material se incluyen en cada presupuesto.",
+      "q4": "¿Ofrecéis entrega e instalación?",
+      "a4": "Sí. Ofrecemos un servicio llave en mano desde la producción hasta la instalación en sitio — gestionando la logística, estudios de campo e instalación de señalización, rotulación de vehículos y displays gran formato en toda España.",
+      "q5": "¿Hay un pedido mínimo?",
+      "a5": "Sin pedido mínimo. Producimos piezas únicas a medida y tiradas de gran volumen por igual. El precio escala con la cantidad — contáctanos para un presupuesto personalizado.",
+      "q6": "¿A qué zonas de España atendéis?",
+      "a6": "Nuestro estudio está ubicado en el Distrito de Diseño de Madrid. Atendemos a clientes en toda España y coordinamos instalaciones nacionales. Los proyectos internacionales se aceptan bajo petición."
     },
     "specs": {
       "title": "Especificaciones del Estudio",

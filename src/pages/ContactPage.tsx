@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { supabase } from '../lib/supabase';
 import { EnquiryForm } from '../components/EnquiryForm';
 import { SEO } from '../components/SEO';
+import { SchemaOrg } from '../components/SchemaOrg';
 
 /** Figma asset — Elena Rodriguez portrait (expires 7 days; replace with hosted asset) */
 const ELENA_IMG = 'https://www.figma.com/api/mcp/asset/524e9cee-b4d9-4e80-b1f9-850e92acb8df';
@@ -41,12 +42,12 @@ function StudioSpecs() {
       <h3 className="font-manrope font-bold text-jm-heading text-2xl leading-8 mb-8">
         {t('contact.studio_specs_title')}
       </h3>
-      <div className="flex flex-col gap-6">
+      <dl className="flex flex-col gap-6">
         {rows.map(({ label, value }) => (
           <div key={label} className="grid grid-cols-[140px_1fr] items-start border-b border-[#e4e2df] pb-4">
-            <span className="font-inter text-jm-primary text-sm tracking-[1.4px] uppercase leading-5">{label}</span>
+            <dt className="font-inter text-jm-primary text-sm tracking-[1.4px] uppercase leading-5">{label}</dt>
             {label === t('contact.connect_label') ? (
-              <div className="flex gap-4">
+              <dd className="flex gap-4">
                 <a href="https://instagram.com" target="_blank" rel="noreferrer"
                   className="font-inter text-jm-primary text-base leading-6 hover:text-jm-accent transition-colors">
                   Instagram
@@ -55,16 +56,25 @@ function StudioSpecs() {
                   className="font-inter text-jm-primary text-base leading-6 hover:text-jm-accent transition-colors">
                   LinkedIn
                 </a>
-              </div>
+              </dd>
             ) : (
-              <span className="font-inter text-jm-heading text-base leading-6 whitespace-pre-line">{value}</span>
+              <dd className="font-inter text-jm-heading text-base leading-6 whitespace-pre-line">{value}</dd>
             )}
           </div>
         ))}
-      </div>
+      </dl>
     </section>
   );
 }
+
+const CONTACT_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://jm-publicidad-website.pages.dev/' },
+    { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://jm-publicidad-website.pages.dev/contact' },
+  ],
+};
 
 /** Contact page — hero, enquiry form, studio specs, map, testimonial */
 export function ContactPage() {
@@ -106,6 +116,7 @@ export function ContactPage() {
         description="Contact JM Publicidad for a quote on outdoor signage, vehicle branding, print production, or digital advertising. Studio located in Madrid's Design District."
         path="/contact"
       />
+      <SchemaOrg schema={CONTACT_SCHEMA} />
 
       {/* Hero */}
       <section className="px-6 pt-10 pb-12 max-w-lg mx-auto lg:max-w-3xl">

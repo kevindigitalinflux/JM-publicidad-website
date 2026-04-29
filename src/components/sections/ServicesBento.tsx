@@ -29,6 +29,21 @@ export function ServicesBento() {
           <p className="font-inter text-jm-body text-sm leading-[1.625]">
             {t('services_page.creative_campaigns.description')}
           </p>
+          <ul className="flex flex-col gap-2 py-1">
+            {[
+              t('services_page.creative_campaigns.feature_1'),
+              t('services_page.creative_campaigns.feature_2'),
+              t('services_page.creative_campaigns.feature_3'),
+            ].map((feat) => (
+              <li key={feat} className="flex items-start gap-3">
+                <svg className="w-3.5 h-3.5 text-jm-primary shrink-0 mt-0.5" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.5" />
+                  <path d="M4.5 7l2 2 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+                <span className="font-inter text-jm-body text-xs">{feat}</span>
+              </li>
+            ))}
+          </ul>
           <Link to="/contact" className="mt-2 bg-jm-primary text-white font-inter font-semibold text-sm px-6 py-3 rounded text-center hover:bg-jm-accent transition-colors">
             {t('services_page.creative_campaigns.cta')}
           </Link>
@@ -78,6 +93,21 @@ export function ServicesBento() {
         <p className="font-inter text-white/90 text-sm leading-[1.625]">
           {t('services_page.print_media.description')}
         </p>
+        <ul className="flex flex-col gap-2 py-1">
+          {[
+            t('services_page.print_media.feature_1'),
+            t('services_page.print_media.feature_2'),
+            t('services_page.print_media.feature_3'),
+          ].map((feat) => (
+            <li key={feat} className="flex items-start gap-3">
+              <svg className="w-3.5 h-3.5 text-white/70 shrink-0 mt-0.5" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M4.5 7l2 2 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+              <span className="font-inter text-white/90 text-xs">{feat}</span>
+            </li>
+          ))}
+        </ul>
         <div className="grid grid-cols-2 gap-4 py-3">
           {[
             { label: t('services_page.print_media.spec_1_label'), value: t('services_page.print_media.spec_1_value') },
@@ -107,6 +137,21 @@ export function ServicesBento() {
         <p className="font-inter text-jm-body text-sm leading-[1.625]">
           {t('services_page.branding.description')}
         </p>
+        <ul className="flex flex-col gap-2 py-1 text-left">
+          {[
+            t('services_page.branding.feature_1'),
+            t('services_page.branding.feature_2'),
+            t('services_page.branding.feature_3'),
+          ].map((feat) => (
+            <li key={feat} className="flex items-start gap-3">
+              <svg className="w-3.5 h-3.5 text-jm-primary shrink-0 mt-0.5" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M4.5 7l2 2 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+              <span className="font-inter text-jm-body text-xs">{feat}</span>
+            </li>
+          ))}
+        </ul>
         <Link to="/portfolio" className="font-inter font-semibold text-jm-primary text-sm tracking-[0.05em] uppercase underline hover:text-jm-accent transition-colors">
           {t('services_page.branding.cta')}
         </Link>

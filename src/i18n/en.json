@@ -51,6 +51,9 @@
     "creative_campaigns": {
       "title": "Creative Campaigns",
       "description": "Conceptual strategies that resonate. We don't just create ads; we build narratives that demand attention and drive cultural conversation.",
+      "feature_1": "Multi-channel strategy — print, digital, and OOH",
+      "feature_2": "Concept development to finished creative asset",
+      "feature_3": "Campaign adaptation across all media formats",
       "cta": "Inquire"
     },
     "digital_marketing": {
@@ -64,6 +67,9 @@
     "print_media": {
       "title": "Print Media Production",
       "description": "The heart of our studio. We specialize in premium large-format printing, texture-rich tactile materials, and precision architectural signage.",
+      "feature_1": "Large-format printing up to 1200 DPI resolution",
+      "feature_2": "UV-resistant, weatherproof and anti-graffiti finishes",
+      "feature_3": "Turnkey service — production to on-site installation",
       "spec_1_label": "Resolution",
       "spec_1_value": "1200 DPI",
       "spec_2_label": "Finish",
@@ -73,7 +79,25 @@
     "branding": {
       "title": "Identity & Branding",
       "description": "Developing timeless visual systems. From logo architecture to full brand style guides that ensure consistency across every touchpoint.",
+      "feature_1": "Logo architecture and visual identity design",
+      "feature_2": "Brand guidelines covering typography, colour and layout",
+      "feature_3": "Multi-format asset production for print, digital and signage",
       "cta": "View Portfolio"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "How long does production take?",
+      "a1": "Standard orders complete in 10–14 business days. Express production (5–7 days) is available on request. Turnaround depends on material type, finish, and order volume — exact timelines are confirmed in every quote.",
+      "q2": "Do you handle design as well as print?",
+      "a2": "Yes. JM Publicidad offers end-to-end service: creative concept, graphic design, print production, and on-site installation. You can brief us from a rough idea or supply print-ready files.",
+      "q3": "What materials and finishes do you offer?",
+      "a3": "Our stock library includes imported Italian cotton papers, sustainable recycled stocks, luxury vinyls, UV-resistant outdoor laminates, anti-graffiti coatings, and Pantone-matched inks. Material recommendations are included in every quote.",
+      "q4": "Do you offer delivery and installation?",
+      "a4": "Yes. We offer a turnkey service from production to on-site installation — managing logistics, site surveys, and installation for signage, vehicle branding, and large-format displays across Spain.",
+      "q5": "Is there a minimum order?",
+      "a5": "No minimum order. We produce single bespoke pieces and high-volume runs alike. Pricing scales with quantity — contact us for a tailored quote.",
+      "q6": "Which areas of Spain do you serve?",
+      "a6": "Our studio is based in Madrid's Design District. We serve clients across Spain and coordinate national installations. International projects are accepted on request."
     },
     "specs": {
       "title": "Studio Specifications",
