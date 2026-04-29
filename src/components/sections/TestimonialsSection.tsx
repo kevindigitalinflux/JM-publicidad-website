@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 
 interface Testimonial {
   quoteKey: string;
@@ -15,9 +16,10 @@ const TESTIMONIALS: Testimonial[] = [
 /** Scrollable testimonials row — "Voices from the Studio" */
 export function TestimonialsSection() {
   const { t } = useTranslation();
+  const ref = useScrollReveal<HTMLElement>();
 
   return (
-    <section className="pb-16 pt-8">
+    <section ref={ref} className="pb-16 pt-8">
       <h2 className="font-manrope font-extrabold text-jm-heading text-[30px] leading-[36px] text-center px-6 mb-10">
         {t('portfolio.testimonials_title')}
       </h2>
@@ -25,7 +27,7 @@ export function TestimonialsSection() {
         {TESTIMONIALS.map((item) => (
           <div
             key={item.nameKey}
-            className="bg-white rounded-lg p-8 flex flex-col justify-between min-w-[280px] lg:min-w-0 shrink-0 lg:shrink"
+            className="card bg-white rounded-lg p-8 flex flex-col justify-between min-w-[280px] lg:min-w-0 shrink-0 lg:shrink"
           >
             <p className="font-inter italic text-jm-body text-base leading-[26px] pb-8">
               {t(item.quoteKey)}

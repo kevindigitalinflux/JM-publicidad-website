@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 
 /** Figma asset — Creative Campaigns background (expires 7 days; replace with hosted asset) */
 const CREATIVE_BG = 'https://www.figma.com/api/mcp/asset/9531eeaf-c2af-4b05-9829-30a088e2e69a';
@@ -7,12 +8,13 @@ const CREATIVE_BG = 'https://www.figma.com/api/mcp/asset/9531eeaf-c2af-4b05-9829
 /** Four bento-style service cards for the Services page */
 export function ServicesBento() {
   const { t } = useTranslation();
+  const ref = useScrollReveal<HTMLElement>();
 
   return (
-    <section className="px-6 pb-12 max-w-lg mx-auto lg:max-w-3xl flex flex-col gap-6">
+    <section ref={ref} className="px-6 pb-12 max-w-lg mx-auto lg:max-w-3xl flex flex-col gap-6">
 
       {/* Card 1: Creative Campaigns — image card */}
-      <div className="bg-jm-bg-card rounded-lg overflow-hidden">
+      <div className="card bg-jm-bg-card rounded-lg overflow-hidden">
         <div className="relative h-48 shrink-0">
           <img src={CREATIVE_BG} alt="" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-jm-bg-card to-transparent" />
@@ -34,7 +36,7 @@ export function ServicesBento() {
       </div>
 
       {/* Card 2: Digital Marketing — light card */}
-      <div className="bg-jm-bg-section border border-[rgba(197,200,189,0.1)] rounded-lg p-6 flex flex-col gap-3">
+      <div className="card bg-jm-bg-section border border-[rgba(197,200,189,0.1)] rounded-lg p-6 flex flex-col gap-3">
         <div className="flex items-start justify-between">
           <svg className="w-7 h-5 text-jm-primary" viewBox="0 0 20 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
             <path d="M2 14l5-5 4 4 7-7" strokeLinecap="round" strokeLinejoin="round" />
@@ -69,7 +71,7 @@ export function ServicesBento() {
       </div>
 
       {/* Card 3: Print Media Production — green gradient */}
-      <div className="rounded-lg p-8 flex flex-col gap-3 shadow-xl" style={{ background: 'linear-gradient(135deg, #536049 0%, #6c7960 100%)' }}>
+      <div className="card rounded-lg p-8 flex flex-col gap-3 shadow-xl" style={{ background: 'linear-gradient(135deg, #536049 0%, #6c7960 100%)' }}>
         <h3 className="font-manrope font-bold text-white text-2xl leading-8">
           {t('services_page.print_media.title')}
         </h3>
@@ -93,7 +95,7 @@ export function ServicesBento() {
       </div>
 
       {/* Card 4: Identity & Branding — white centered */}
-      <div className="bg-white border border-[#e4e2df] rounded-lg p-6 flex flex-col items-center gap-4 text-center">
+      <div className="card bg-white border border-[#e4e2df] rounded-lg p-6 flex flex-col items-center gap-4 text-center">
         <div className="bg-jm-bg-card w-16 h-16 rounded-xl flex items-center justify-center">
           <svg className="w-[14px] h-[23px] text-jm-primary" viewBox="0 0 14 23" fill="currentColor" aria-hidden="true">
             <path d="M0 0h9.6C12.02 0 14 1.98 14 4.4c0 1.5-.72 2.84-1.84 3.67A4.4 4.4 0 0110.4 17.6H2.8V23H0V0zm2.8 2.8v12h7.6a1.6 1.6 0 000-3.2H5.6V9.6h4.8a1.6 1.6 0 100-3.2H2.8V2.8z" />

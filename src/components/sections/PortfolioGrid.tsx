@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 
 /**
  * Figma MCP asset URLs — temporary (7 days). Replace with hosted client photos
@@ -19,7 +20,7 @@ interface ProjectCardProps {
 
 function ProjectCard({ img, category, title, client, imageHeight = 'h-48' }: ProjectCardProps) {
   return (
-    <div className="bg-jm-bg-section rounded-lg overflow-hidden flex flex-col">
+    <div className="card bg-jm-bg-section rounded-lg overflow-hidden flex flex-col">
       <div className={`relative ${imageHeight} shrink-0 overflow-hidden`}>
         <img src={img} alt={title} className="absolute inset-0 w-full h-full object-cover" />
       </div>
@@ -39,9 +40,10 @@ function ProjectCard({ img, category, title, client, imageHeight = 'h-48' }: Pro
 /** Asymmetric portfolio grid — large featured + two-column + full-width */
 export function PortfolioGrid() {
   const { t } = useTranslation();
+  const ref = useScrollReveal<HTMLElement>();
 
   return (
-    <section className="px-6 pb-12 max-w-lg mx-auto lg:max-w-3xl flex flex-col gap-8">
+    <section ref={ref} className="px-6 pb-12 max-w-lg mx-auto lg:max-w-3xl flex flex-col gap-8">
 
       {/* Project 1 — large featured */}
       <ProjectCard
@@ -54,7 +56,7 @@ export function PortfolioGrid() {
 
       {/* Projects 2 & 3 — two column */}
       <div className="grid grid-cols-2 gap-4">
-        <div className="bg-jm-bg-section rounded-lg overflow-hidden flex flex-col">
+        <div className="card bg-jm-bg-section rounded-lg overflow-hidden flex flex-col">
           <div className="relative h-40 overflow-hidden shrink-0">
             <img src={IMG_PROJECT_2} alt={t('portfolio.project_2_title')} className="absolute inset-0 w-full h-full object-cover" />
           </div>
@@ -63,7 +65,7 @@ export function PortfolioGrid() {
             <p className="font-inter text-jm-body text-xs leading-4">{t('portfolio.project_2_client')}</p>
           </div>
         </div>
-        <div className="bg-jm-bg-section rounded-lg overflow-hidden flex flex-col">
+        <div className="card bg-jm-bg-section rounded-lg overflow-hidden flex flex-col">
           <div className="relative h-40 overflow-hidden shrink-0">
             <img src={IMG_PROJECT_3} alt={t('portfolio.project_3_title')} className="absolute inset-0 w-full h-full object-cover" />
           </div>
