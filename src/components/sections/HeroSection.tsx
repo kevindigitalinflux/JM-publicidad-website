@@ -17,7 +17,6 @@ export function HeroSection() {
             height="900px"
             scale={1}
             dpi={1.5}
-            sdkUrl="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@2.1.9/dist/unicornStudio.umd.js"
           />
         </div>
       </div>
