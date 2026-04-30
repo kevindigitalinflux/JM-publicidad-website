@@ -298,27 +298,58 @@ All items confirmed PASS or N/A:
 
 ## Current Status
 
-**Working:**
+**Working (confirmed live on Cloudflare Pages):**
 - Supabase connection — `enquiries` table live, RLS enabled (anon INSERT only)
 - Contact form (`/contact`) — full form, EN/ES i18n, submits to Supabase, success/error states
 - Routing — all 4 routes registered (`/`, `/services`, `/portfolio`, `/contact`)
-- i18n — EN and ES translations in place for all existing sections
-- Initial homepage sections scaffolded (Hero, Precision, Services overview, CTA)
-- Cloudflare Pages — live at `https://jm-publicidad-website.pages.dev`, auto-deploy from GitHub `main`
+- i18n — full EN and ES translations across all pages and sections
+- All 4 pages fully built from Figma — Hero, Precision, Services, Portfolio, Contact
+- Unicorn Studio WebGL animation — live on hero section background
+- GSAP scroll-triggered reveal — all `.card` elements fade up 50px on viewport entry (0.15s stagger)
+- GSAP hero entrance timeline — headline → subtext per-word → CTA bounce, 0.2s delay on load
+- Per-page SEO — `<title>`, meta description, OG tags, canonical URL on every page via `SEO` component
+- JSON-LD schemas — `LocalBusiness` + `WebSite` (home), `FAQPage` (services), `ItemList` (portfolio), `BreadcrumbList` (contact)
+- FAQ section on `/services` — 6 Q&As in `<dl>` accordion, bilingual, targets long-tail search queries
+- Feature bullet lists — all 4 service cards have scannable `<ul>` feature lists
+- Semantic `<dl>/<dt>/<dd>` markup — studio specs on all three pages
+- `robots.txt` and `sitemap.xml` in `public/`
+- Route-based code splitting via `React.lazy` + `Suspense`
+- Vite `manualChunks` — vendor-react, vendor-gsap, vendor-i18n split separately
+- Cloudflare Pages — live at `https://jm-publicidad-website.pages.dev`
 
-**Not yet started:**
-- Homepage — needs full design implementation from Figma
-- Services page — needs all 6 categories built out
-- Portfolio gallery — needs client photography integrated
-- Quote request flow
-- Cloudflare Pages deployment — `https://jm-publicidad-website.pages.dev`
+**Not yet done:**
+- Portfolio gallery — client photography not yet integrated (Figma assets used as placeholders)
+- Services page — only 4 of 6 service categories built; 6th category pending `Cata.pdf`
+- Quote request flow (separate page or modal)
+- Mobile responsive audit
+- Real photography swap from Google Drive libraries
 
-**Known issues:** —
+**Known issues / gotchas:**
+- No `Content-Security-Policy` header in `public/_headers` — intentionally removed. Unicorn Studio's SDK (loaded from `cdn.jsdelivr.net`) fetches animation data from `storage.googleapis.com` which is hard to enumerate for CSP allowlists. Security is maintained via Supabase RLS, `X-Frame-Options: DENY`, and `X-Content-Type-Options: nosniff`. Do NOT re-add a strict CSP without first testing Unicorn Studio in an incognito window on the live domain.
+- Figma asset URLs used as image `src` in several components — these expire after 7 days. Replace with hosted assets before client handoff.
+
+---
+
+## Key Files
+
+| File | Purpose |
+|------|---------|
+| `src/components/SEO.tsx` | Per-page `<title>`, meta, OG tags via react-helmet-async |
+| `src/components/SchemaOrg.tsx` | JSON-LD injection via react-helmet-async |
+| `src/components/sections/HeroSection.tsx` | Unicorn Studio background + GSAP entrance timeline |
+| `src/hooks/useScrollReveal.ts` | GSAP ScrollTrigger batch hook for `.card` elements |
+| `src/components/sections/FAQSection.tsx` | Accordion FAQ for `/services` — feeds Google PAA |
+| `src/i18n/en.json` / `es.json` | All UI strings — bilingual |
+| `public/_headers` | Cloudflare Pages response headers (no CSP — see known issues) |
+| `public/robots.txt` | Crawler directives |
+| `public/sitemap.xml` | All 4 routes with priorities |
+| `gap-analysis.md` | 5 SEO content gaps vs top 3 competitors |
 
 ---
 
 ## Do Not Touch
-> Add these as the project progresses.
+- `public/_headers` — do not add a strict CSP without testing Unicorn Studio first (see known issues)
+- `src/lib/supabase.ts` — anon key loaded from env, never hardcode
 
 ---
 
