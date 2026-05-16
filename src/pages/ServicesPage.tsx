@@ -9,9 +9,9 @@ function StudioSpecs() {
   const { t } = useTranslation();
 
   const rows = [
-    { label: t('services_page.specs.lead_time_label'), value: t('services_page.specs.lead_time_value') },
-    { label: t('services_page.specs.software_label'),  value: t('services_page.specs.software_value')  },
-    { label: t('services_page.specs.materials_label'), value: t('services_page.specs.materials_value') },
+    { label: t('services_page.specs.machine_label'),    value: t('services_page.specs.machine_value')    },
+    { label: t('services_page.specs.resolution_label'), value: t('services_page.specs.resolution_value') },
+    { label: t('services_page.specs.finish_label'),     value: t('services_page.specs.finish_value')     },
   ];
 
   return (
@@ -38,12 +38,12 @@ const FAQ_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'How long does production take?', acceptedAnswer: { '@type': 'Answer', text: 'Standard orders complete in 10–14 business days. Express production (5–7 days) is available on request. Turnaround depends on material type, finish, and order volume — exact timelines are confirmed in every quote.' } },
-    { '@type': 'Question', name: 'Do you handle design as well as print?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. JM Publicidad offers end-to-end service: creative concept, graphic design, print production, and on-site installation. You can brief us from a rough idea or supply print-ready files.' } },
-    { '@type': 'Question', name: 'What materials and finishes do you offer?', acceptedAnswer: { '@type': 'Answer', text: 'Our stock library includes imported Italian cotton papers, sustainable recycled stocks, luxury vinyls, UV-resistant outdoor laminates, anti-graffiti coatings, and Pantone-matched inks. Material recommendations are included in every quote.' } },
-    { '@type': 'Question', name: 'Do you offer delivery and installation?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We offer a turnkey service from production to on-site installation — managing logistics, site surveys, and installation for signage, vehicle branding, and large-format displays across Spain.' } },
-    { '@type': 'Question', name: 'Is there a minimum order?', acceptedAnswer: { '@type': 'Answer', text: 'No minimum order. We produce single bespoke pieces and high-volume runs alike. Pricing scales with quantity — contact us for a tailored quote.' } },
-    { '@type': 'Question', name: 'Which areas of Spain do you serve?', acceptedAnswer: { '@type': 'Answer', text: "Our studio is based in Madrid's Design District. We serve clients across Spain and coordinate national installations. International projects are accepted on request." } },
+    { '@type': 'Question', name: '¿Cuánto tiempo tarda la producción?', acceptedAnswer: { '@type': 'Answer', text: 'Los tiempos varían según el tipo de producto y volumen del pedido. Confirmamos el plazo exacto al momento de enviarte el presupuesto.' } },
+    { '@type': 'Question', name: '¿Ofrecen servicio de diseño?', acceptedAnswer: { '@type': 'Answer', text: 'Sí. Contamos con equipo de diseño propio. Podemos trabajar desde una idea inicial o con archivos listos para imprimir.' } },
+    { '@type': 'Question', name: '¿Qué resolución tienen sus impresiones?', acceptedAnswer: { '@type': 'Answer', text: 'Imprimimos a 2400 ppi en maquinaria ecosolvente de gran formato propia (Signstar 320m y Kingjet).' } },
+    { '@type': 'Question', name: '¿Trabajan con vinilos para vehículos?', acceptedAnswer: { '@type': 'Answer', text: 'Sí. Realizamos brandeo vehicular completo — autos, camiones, trailers y cualquier superficie. Incluye diseño, impresión e instalación.' } },
+    { '@type': 'Question', name: '¿Hay un mínimo de pedido?', acceptedAnswer: { '@type': 'Answer', text: 'No. Producimos desde una sola pieza hasta tiradas de alto volumen.' } },
+    { '@type': 'Question', name: '¿Dónde están ubicados?', acceptedAnswer: { '@type': 'Answer', text: 'Estamos en Quito, Ecuador. Atendemos a clientes en todo el país.' } },
   ],
 };
 
@@ -54,8 +54,8 @@ export function ServicesPage() {
   return (
     <main className="bg-jm-bg min-h-screen pt-[60px]">
       <SEO
-        title="Services — Outdoor Signage, Print &amp; Branding | JM Publicidad"
-        description="Creative campaigns, digital marketing, premium print media production, and brand identity from JM Publicidad. Madrid-based studio serving clients across Spain."
+        title="Servicios — Publicidad Exterior, Digital e Impresos | JM Publicidad"
+        description="Rótulos, roll ups, pop ups, brandeo vehicular, pantallas digitales, souvenirs corporativos y medios impresos. Producción publicitaria en Quito, Ecuador."
         path="/services"
       />
       <SchemaOrg schema={FAQ_SCHEMA} />
