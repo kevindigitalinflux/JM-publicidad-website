@@ -1,3 +1,17 @@
+/* ─── Clients marquee strip ─────────────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Legacy Vite scaffold (unused) ─────────────────────────────────────── */
 .counter {
   font-size: 16px;
   padding: 5px 10px;

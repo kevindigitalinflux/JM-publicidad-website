@@ -72,15 +72,15 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen bg-jm-bg flex items-center overflow-hidden pt-20">
-      {/* Unicorn Studio animated background — pointer-events disabled so CTAs remain interactive */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <section ref={sectionRef} className="relative h-screen min-h-[640px] bg-jm-bg overflow-hidden">
+      {/* Unicorn Studio animated background — clipped at bottom by overflow-hidden */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <div style={{ width: '1440px', height: '900px' }} data-us-project="NUtfgbuISPQpTZ0NzzZa" />
         </div>
       </div>
 
-      <div className="relative w-full max-w-6xl mx-auto px-6 py-24">
+      <div className="relative w-full max-w-6xl mx-auto px-6 pt-28 pb-8">
         <div className="max-w-[448px]">
           {/* Badge */}
           <div className="inline-flex items-center bg-jm-accent/20 px-3 py-1 rounded mb-6">
@@ -94,11 +94,10 @@ export function HeroSection() {
             <span className="block">{t('hero.headline_1')}</span>
             <span className="block text-jm-primary">{t('hero.headline_2')}</span>
             <span className="block">{t('hero.headline_3')}</span>
-            <span className="block text-jm-accent">{t('hero.headline_4')}</span>
           </h1>
 
           {/* Subheadline — split into word spans for per-word stagger */}
-          <p className="hero-subtext font-inter font-normal text-jm-body text-lg leading-[1.625] mb-10 pt-2">
+          <p className="hero-subtext font-inter font-normal text-jm-body text-lg leading-[1.625] mb-8 pt-2">
             {splitWords(t('hero.subheadline'))}
           </p>
 

@@ -1,4 +1,5 @@
 import { HeroSection } from '../components/sections/HeroSection';
+import { ClientsStrip } from '../components/sections/ClientsStrip';
 import { PrecisionSection } from '../components/sections/PrecisionSection';
 import { ServicesSection } from '../components/sections/ServicesSection';
 import { CtaSection } from '../components/sections/CtaSection';
@@ -10,28 +11,24 @@ const LOCAL_BUSINESS_SCHEMA = {
   '@type': 'LocalBusiness',
   '@id': 'https://jm-publicidad-website.pages.dev/#business',
   name: 'JM Publicidad',
-  description: 'Full-service advertising and precision print production studio in Madrid, Spain. Outdoor signage, vehicle branding, large-format print, brand identity, and digital advertising.',
+  description: 'Producción publicitaria de alta calidad en Quito, Ecuador. Rótulos, roll ups, pop ups, brandeo vehicular, publicidad digital y medios impresos.',
   url: 'https://jm-publicidad-website.pages.dev',
-  telephone: '+34912345678',
-  email: 'studio@jmpublicidad.com',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Av. de la Industria 45',
-    addressLocality: 'Madrid',
-    addressRegion: 'Community of Madrid',
-    addressCountry: 'ES',
+    addressLocality: 'Quito',
+    addressRegion: 'Pichincha',
+    addressCountry: 'EC',
   },
-  geo: { '@type': 'GeoCoordinates', latitude: 40.4168, longitude: -3.7038 },
-  areaServed: { '@type': 'Country', name: 'Spain' },
+  areaServed: { '@type': 'Country', name: 'Ecuador' },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Advertising & Print Services',
+    name: 'Servicios Publicitarios',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Outdoor Signage' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Vehicle Branding' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Large Format Print' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Brand Identity' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Digital Advertising' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Publicidad Exterior' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Brandeo Vehicular' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Publicidad Digital' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Souvenirs Publicitarios' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Medios Impresos' } },
     ],
   },
 };
@@ -45,17 +42,18 @@ const WEBSITE_SCHEMA = {
   publisher: { '@id': 'https://jm-publicidad-website.pages.dev/#business' },
 };
 
-/** Landing page — composes all home screen sections */
+/** Landing page — hero, clients strip, precision, services, CTA */
 export function HomePage() {
   return (
     <main>
       <SEO
-        title="JM Publicidad — Advertising &amp; Print Production Studio, Spain"
-        description="Full-service advertising and print production studio in Spain. Outdoor signage, vehicle branding, digital displays and bespoke print collateral. Get a quote today."
+        title="JM Publicidad — Producción Publicitaria en Quito, Ecuador"
+        description="Rótulos, roll ups, pop ups, brandeo vehicular, pantallas digitales y medios impresos. Producción publicitaria de alta calidad en Quito, Ecuador."
         path="/"
       />
       <SchemaOrg schema={[LOCAL_BUSINESS_SCHEMA, WEBSITE_SCHEMA]} />
       <HeroSection />
+      <ClientsStrip />
       <PrecisionSection />
       <ServicesSection />
       <CtaSection />

@@ -1,29 +1,35 @@
 import { useTranslation } from 'react-i18next';
+import precisionPrint  from '../../assets/sections/precision-print.jpg';
+import precisionFinish from '../../assets/sections/precision-finish.jpg';
+
 
 const features = [
   {
     titleKey: 'precision.feature_1_title',
-    bodyKey: 'precision.feature_1_body',
-    iconBg: 'bg-jm-accent',
-    // TODO: replace with final SVG asset
-    icon: '⬡',
+    bodyKey:  'precision.feature_1_body',
+    iconBg:   'bg-jm-accent',
+    icon:     '⬡',
+    image:    precisionPrint,
+    imageAlt: 'Display publicitario de gran formato en congreso — producido por JM Publicidad',
   },
   {
     titleKey: 'precision.feature_2_title',
-    bodyKey: 'precision.feature_2_body',
-    iconBg: 'bg-jm-primary',
-    icon: '◈',
+    bodyKey:  'precision.feature_2_body',
+    iconBg:   'bg-jm-primary',
+    icon:     '◈',
+    image:    precisionFinish,
+    imageAlt: 'Stand corporativo Park Inn con backdrop y counter — diseño y acabado JM Publicidad',
   },
 ] as const;
 
-/** "The Precision Studio" — two-feature value proposition section */
+/** "Producción que se nota" — two-feature value proposition with reference images */
 export function PrecisionSection() {
   const { t } = useTranslation();
 
   return (
     <section className="bg-jm-bg-section px-6 py-24">
       <div className="max-w-6xl mx-auto">
-        {/* Section heading with divider */}
+        {/* Section heading */}
         <div className="flex items-center gap-4 mb-12">
           <h2 className="font-manrope font-extrabold text-jm-heading text-[30px] tracking-[-0.025em] leading-[36px] whitespace-nowrap">
             {t('precision.title')}
@@ -44,6 +50,15 @@ export function PrecisionSection() {
               <p className="font-inter font-normal text-jm-body text-base leading-[1.625]">
                 {t(f.bodyKey)}
               </p>
+              {/* Reference photo */}
+              <div className="mt-2 rounded-xl overflow-hidden aspect-[4/3]">
+                <img
+                  src={f.image}
+                  alt={f.imageAlt}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
             </div>
           ))}
         </div>
