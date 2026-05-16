@@ -95,7 +95,7 @@
       "q5": "¿Hay un mínimo de pedido?",
       "a5": "No. Producimos desde una sola pieza hasta tiradas de alto volumen. El precio varía según cantidad — contáctanos para un presupuesto personalizado.",
       "q6": "¿Dónde están ubicados?",
-      "a6": "Estamos en Quito, Ecuador. Atendemos a clientes en todo el país."
+      "a6": "Estamos en Rio de Janeiro OE3-127 Y America, Quito, Ecuador. Atendemos a clientes en todo el país."
     },
     "specs": {
       "title": "Nuestra Producción",
@@ -135,10 +135,10 @@
     "success": "Mensaje enviado — te contactaremos pronto.",
     "error": "Algo salió mal. Por favor, inténtalo de nuevo.",
     "location_label": "Ubicación",
-    "location_value": "Quito, Ecuador",
+    "location_value": "Rio de Janeiro OE3-127 Y America, Quito, Ecuador",
     "email_label": "Correo",
-    "email_value": "",
+    "email_value": "jmpublicidad@outlook.es",
     "phone_label": "Teléfono",
-    "phone_value": ""
+    "phone_value": "+593 960 051 007"
   }
 }

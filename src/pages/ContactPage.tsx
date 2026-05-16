@@ -26,19 +26,28 @@ const BUDGET_OPTIONS = {
 function StudioSpecs() {
   const { t } = useTranslation();
 
+  const emailValue = t('contact.email_value') || null;
+  const phoneValue = t('contact.phone_value') || null;
+
   const rows = [
-    { label: t('contact.location_label'), value: t('contact.location_value') },
-    { label: t('contact.phone_label'),    value: t('contact.phone_value') || null },
-    { label: t('contact.email_label'),    value: t('contact.email_value') || null },
+    { label: t('contact.location_label'), value: t('contact.location_value'), href: null },
+    { label: t('contact.phone_label'),    value: phoneValue, href: phoneValue ? `tel:${phoneValue.replace(/\s/g, '')}` : null },
+    { label: t('contact.email_label'),    value: emailValue, href: emailValue ? `mailto:${emailValue}` : null },
   ].filter(r => r.value);
 
   return (
     <section className="px-6 pb-12 max-w-lg mx-auto lg:max-w-3xl">
       <dl className="flex flex-col gap-6">
-        {rows.map(({ label, value }) => (
+        {rows.map(({ label, value, href }) => (
           <div key={label} className="grid grid-cols-[140px_1fr] items-start border-b border-[#e4e2df] pb-4">
             <dt className="font-inter text-jm-primary text-sm tracking-[1.4px] uppercase leading-5">{label}</dt>
-            <dd className="font-inter text-jm-heading text-base leading-6">{value}</dd>
+            <dd className="font-inter text-jm-heading text-base leading-6">
+              {href ? (
+                <a href={href} className="hover:text-jm-primary transition-colors underline-offset-2 hover:underline">
+                  {value}
+                </a>
+              ) : value}
+            </dd>
           </div>
         ))}
       </dl>
