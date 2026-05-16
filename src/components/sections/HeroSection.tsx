@@ -94,7 +94,6 @@ export function HeroSection() {
             <span className="block">{t('hero.headline_1')}</span>
             <span className="block text-jm-primary">{t('hero.headline_2')}</span>
             <span className="block">{t('hero.headline_3')}</span>
-            <span className="block text-jm-accent">{t('hero.headline_4')}</span>
           </h1>
 
           {/* Subheadline — split into word spans for per-word stagger */}

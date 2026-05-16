@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Clients marquee ──────────────────────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 :root {
   --jm-primary:    #536049;
   --jm-accent:     #6c7960;
