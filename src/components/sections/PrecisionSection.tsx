@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import precisionPrint  from '../../assets/sections/precision-print.jpg';
 import precisionFinish from '../../assets/sections/precision-finish.jpg';
 
+
 const features = [
   {
     titleKey: 'precision.feature_1_title',
@@ -9,7 +10,7 @@ const features = [
     iconBg:   'bg-jm-accent',
     icon:     '⬡',
     image:    precisionPrint,
-    imageAlt: 'Maquinaria de impresión gran formato en el estudio de JM Publicidad',
+    imageAlt: 'Display publicitario de gran formato en congreso — producido por JM Publicidad',
   },
   {
     titleKey: 'precision.feature_2_title',
@@ -17,7 +18,7 @@ const features = [
     iconBg:   'bg-jm-primary',
     icon:     '◈',
     image:    precisionFinish,
-    imageAlt: 'Roll ups terminados con acabado profesional producidos por JM Publicidad',
+    imageAlt: 'Stand corporativo Park Inn con backdrop y counter — diseño y acabado JM Publicidad',
   },
 ] as const;
 

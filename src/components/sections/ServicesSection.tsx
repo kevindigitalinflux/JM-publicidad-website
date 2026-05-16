@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import serviceExterior  from '../../assets/sections/service-exterior.jpg';
 import serviceDigital   from '../../assets/sections/service-digital.jpg';
-import serviceSouvenirs from '../../assets/sections/service-souvenirs.jpg';
+import serviceSouvenirs from '../../assets/sections/service-souvenirs.png';
 import servicePrint     from '../../assets/sections/service-print.jpg';
 
 const cards = [
@@ -55,7 +55,7 @@ export function ServicesSection() {
                 src={image}
                 alt=""
                 aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover opacity-[0.13] group-hover:opacity-[0.22] group-hover:scale-110 transition-all duration-500 ease-out pointer-events-none"
+                className="absolute inset-0 w-full h-full object-cover opacity-[0.07] group-hover:opacity-[0.13] group-hover:scale-110 transition-all duration-500 ease-out pointer-events-none"
                 loading="lazy"
               />
 

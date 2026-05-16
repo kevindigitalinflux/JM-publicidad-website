@@ -42,7 +42,7 @@ function LogoTrack() {
 /** Infinite logo carousel — overlaps the hero bottom to cover the Unicorn Studio watermark */
 export function ClientsStrip() {
   return (
-    <section className="relative z-10 -mt-24 w-full bg-jm-bg-section border-t border-b border-[#e4e2df] pt-10 pb-10">
+    <section className="relative z-10 -mt-16 w-full bg-jm-bg-section border-t border-b border-[#e4e2df] pt-10 pb-10">
       {/* Label */}
       <p className="text-center font-inter font-medium text-jm-body text-xs tracking-[0.2em] uppercase mb-8">
         Algunos de nuestros Clientes
