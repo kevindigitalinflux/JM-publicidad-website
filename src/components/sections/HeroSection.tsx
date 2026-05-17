@@ -74,9 +74,9 @@ export function HeroSection() {
   return (
     <section ref={sectionRef} className="relative h-screen min-h-[640px] bg-jm-bg overflow-hidden">
       {/* Unicorn Studio animated background — clipped at bottom by overflow-hidden */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true" tabIndex={-1}>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div style={{ width: '1440px', height: '900px' }} data-us-project="NUtfgbuISPQpTZ0NzzZa" />
+          <div style={{ width: '1440px', height: '900px', pointerEvents: 'none' }} data-us-project="NUtfgbuISPQpTZ0NzzZa" tabIndex={-1} />
         </div>
       </div>
 

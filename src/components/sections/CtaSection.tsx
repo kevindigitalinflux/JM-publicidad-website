@@ -13,6 +13,8 @@ export function CtaSection() {
         src={ctaBg}
         alt=""
         aria-hidden="true"
+        loading="lazy"
+        decoding="async"
         className="absolute inset-y-0 right-0 h-full w-[60%] object-cover object-left opacity-[0.13] pointer-events-none select-none"
       />
 
