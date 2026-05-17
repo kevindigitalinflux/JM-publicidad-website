@@ -6,6 +6,7 @@ import { ProductCard } from './ProductCard';
 import popupSuzuki from '../../assets/media/exterior/popup-suzuki.jpg';
 import rollupObi from '../../assets/media/exterior/rollup-obi.jpg';
 import vehicularImg from '../../assets/media/catalogue/vehicular.png';
+import rotulosImg from '../../assets/media/catalogue/rotulos.png';
 
 /** Publicidad Exterior — Rótulos, Displays, Brandeo Vehicular */
 export function ExteriorSection() {
@@ -25,17 +26,22 @@ export function ExteriorSection() {
         {/* Rótulos */}
         <div>
           <SubSectionLabel label={e('rotulos_label')} />
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <ProductCard title={e('clasicos_title')} specs={[e('clasicos_spec_1'), e('clasicos_spec_2'), e('clasicos_spec_3')]} />
-            <ProductCard title={e('luminosos_title')} specs={[e('luminosos_spec_1'), e('luminosos_spec_2'), e('luminosos_spec_3')]} />
-            <ProductCard title={e('letras3d_title')} specs={[e('letras3d_spec_1'), e('letras3d_spec_2'), e('letras3d_spec_3')]} />
-          </div>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {[e('terminado_1'), e('terminado_2'), e('terminado_3')].map((fin) => (
-              <span key={fin} className="bg-jm-primary/10 text-jm-primary font-inter text-[10px] font-semibold px-3 py-1 rounded-full tracking-wide">
-                {fin}
-              </span>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+            <div className="flex flex-col gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <ProductCard title={e('clasicos_title')} specs={[e('clasicos_spec_1'), e('clasicos_spec_2'), e('clasicos_spec_3')]} />
+                <ProductCard title={e('luminosos_title')} specs={[e('luminosos_spec_1'), e('luminosos_spec_2'), e('luminosos_spec_3')]} />
+                <ProductCard title={e('letras3d_title')} specs={[e('letras3d_spec_1'), e('letras3d_spec_2'), e('letras3d_spec_3')]} />
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {[e('terminado_1'), e('terminado_2'), e('terminado_3')].map((fin) => (
+                  <span key={fin} className="bg-jm-primary/10 text-jm-primary font-inter text-[10px] font-semibold px-3 py-1 rounded-full tracking-wide">
+                    {fin}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <img src={rotulosImg} alt="Rótulos publicitarios — JM Publicidad" className="rounded-xl w-full object-cover" loading="lazy" />
           </div>
         </div>
 
@@ -51,8 +57,8 @@ export function ExteriorSection() {
             <ProductCard title={e('stands_title')} specs={[e('stands_spec_1'), e('stands_spec_2'), e('stands_spec_3')]} />
           </div>
           <div className="grid grid-cols-2 gap-3">
-            <img src={popupSuzuki} alt="Pop-up Suzuki — JM Publicidad" className="rounded-xl object-cover aspect-[4/3] w-full" loading="lazy" />
-            <img src={rollupObi} alt="Roll-up OBI — JM Publicidad" className="rounded-xl object-cover aspect-[4/3] w-full" loading="lazy" />
+            <img src={popupSuzuki} alt="Pop-up Suzuki — JM Publicidad" className="rounded-xl object-cover aspect-[3/4] w-full" loading="lazy" />
+            <img src={rollupObi} alt="Roll-up OBI — JM Publicidad" className="rounded-xl object-cover aspect-[3/4] w-full" loading="lazy" />
           </div>
         </div>
 
