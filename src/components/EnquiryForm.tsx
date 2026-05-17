@@ -38,7 +38,7 @@ export function EnquiryForm({ form, serviceOptions, budgetOptions, status, onCha
         <div className="relative">
           <select name="service" value={form.service} onChange={onChange}
             className={`${INPUT_CLASS} appearance-none pr-8 cursor-pointer`}>
-            <option value="">Architectural Signage</option>
+            <option value="">Seleccionar servicio…</option>
             {serviceOptions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
           </select>
           <svg className="absolute right-0 top-1/2 -translate-y-1/2 w-5 h-5 text-jm-body pointer-events-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

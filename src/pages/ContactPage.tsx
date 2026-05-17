@@ -12,10 +12,7 @@ interface FormState {
 
 const INITIAL_FORM: FormState = { name: '', email: '', company: '', service: '', message: '', budget_range: '' };
 
-const SERVICE_OPTIONS = {
-  en: ['Outdoor Advertising', 'Vehicle Branding', 'Digital Advertising', 'Promotional Merchandise', 'Printed Media', 'Other'],
-  es: ['Publicidad Exterior', 'Brandeo Vehicular', 'Publicidad Digital', 'Souvenirs Publicitarios', 'Medios Impresos', 'Otro'],
-};
+const SERVICE_OPTIONS = ['Publicidad Exterior', 'Brandeo Vehicular', 'Publicidad Digital', 'Souvenirs Publicitarios', 'Medios Impresos', 'Otro'];
 
 const BUDGET_OPTIONS = {
   en: ['Under $200', '$200 – $500', '$500 – $1,000', '$1,000 – $3,000', 'Over $3,000'],
@@ -94,7 +91,29 @@ export function ContactPage() {
       locale: lang,
     });
 
-    if (error) { setStatus('error'); } else { setStatus('success'); setForm(INITIAL_FORM); }
+    if (error) { setStatus('error'); return; }
+
+    // Forward enquiry to jmpublicidad@outlook.es via Web3Forms
+    const w3Key = import.meta.env.VITE_WEB3FORMS_KEY as string | undefined;
+    if (w3Key) {
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: w3Key,
+          subject: `Nueva consulta — ${form.service || 'JM Publicidad'}`,
+          name: form.name.trim(),
+          email: form.email.trim(),
+          empresa: form.company || '—',
+          servicio: form.service || '—',
+          mensaje: form.message.trim(),
+          presupuesto: form.budget_range || '—',
+        }),
+      }).catch(() => {}); // non-blocking — record is already in Supabase
+    }
+
+    setStatus('success');
+    setForm(INITIAL_FORM);
   }
 
   return (
@@ -126,7 +145,7 @@ export function ContactPage() {
           ) : (
             <EnquiryForm
               form={form}
-              serviceOptions={SERVICE_OPTIONS[lang]}
+              serviceOptions={SERVICE_OPTIONS}
               budgetOptions={BUDGET_OPTIONS[lang]}
               status={status}
               onChange={handleChange}
