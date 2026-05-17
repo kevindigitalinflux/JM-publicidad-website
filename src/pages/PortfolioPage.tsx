@@ -85,26 +85,21 @@ export function PortfolioPage() {
         </p>
       </section>
 
-      {/* Client logos */}
-      <section className="pb-16 overflow-hidden">
-        <p className="font-inter font-semibold text-jm-primary text-[11px] tracking-[2.2px] uppercase leading-[16.5px] mb-6 px-6 max-w-lg mx-auto lg:max-w-3xl">
+      {/* Client logos — static */}
+      <section className="pb-16 px-6 max-w-lg mx-auto lg:max-w-3xl">
+        <p className="font-inter font-semibold text-jm-primary text-[11px] tracking-[2.2px] uppercase leading-[16.5px] mb-6">
           {t('portfolio.clients_label')}
         </p>
-        <div className="overflow-hidden group">
-          <div
-            className="flex items-center gap-12 w-max animate-scroll-left group-hover:[animation-play-state:paused]"
-            style={{ animationDuration: '30s' }}
-          >
-            {[...CLIENT_LOGOS, ...CLIENT_LOGOS, ...CLIENT_LOGOS].map(({ src, alt }, i) => (
-              <img
-                key={i}
-                src={src}
-                alt={alt}
-                loading="lazy"
-                className="h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity"
-              />
-            ))}
-          </div>
+        <div className="flex flex-wrap items-center justify-start gap-x-10 gap-y-6">
+          {CLIENT_LOGOS.map(({ src, alt }) => (
+            <img
+              key={alt}
+              src={src}
+              alt={alt}
+              loading="lazy"
+              className="h-12 w-auto object-contain opacity-60"
+            />
+          ))}
         </div>
       </section>
 
