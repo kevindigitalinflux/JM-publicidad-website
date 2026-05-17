@@ -1,23 +1,27 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import entrepreneurBg from '../../assets/media/cta/entrepreneur-bg.jpg';
 
-/** Full-width CTA banner — "Ready to give your brand visibility?" */
+/**
+ * Full-width CTA banner — "Ready to give your brand visibility?"
+ * Background image slot: drop entrepreneur-bg.jpg into src/assets/media/cta/ and
+ * replace the CSS decorative layer with an <img> import when ready.
+ */
 export function CtaSection() {
   const { t } = useTranslation();
 
   return (
     <section className="bg-jm-primary relative overflow-hidden py-24 px-6">
-      {/* Entrepreneur background — right side, barely visible */}
-      <img
-        src={entrepreneurBg}
-        alt=""
-        aria-hidden="true"
-        className="absolute right-0 top-0 h-full w-[55%] object-cover object-center opacity-[0.12] mix-blend-luminosity pointer-events-none select-none"
-      />
-
-      {/* Decorative blur orb */}
-      <div className="absolute top-[-40px] right-[-40px] w-64 h-64 rounded-full bg-white/10 blur-[40px] pointer-events-none" />
+      {/* Decorative right-side treatment — placeholder until entrepreneur photo is added */}
+      <div className="absolute right-0 top-0 h-full w-[55%] pointer-events-none" aria-hidden="true">
+        {/* Large soft orb — upper right */}
+        <div className="absolute top-[-80px] right-[-80px] w-[420px] h-[420px] rounded-full bg-white/[0.06] blur-[60px]" />
+        {/* Mid orb — centre right */}
+        <div className="absolute top-[30%] right-[5%] w-[280px] h-[280px] rounded-full bg-white/[0.04] blur-[40px]" />
+        {/* Small accent orb — lower right */}
+        <div className="absolute bottom-[-40px] right-[15%] w-[180px] h-[180px] rounded-full bg-white/[0.07] blur-[30px]" />
+        {/* Subtle radial sweep from far right */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_right_center,rgba(255,255,255,0.08)_0%,transparent_65%)]" />
+      </div>
 
       <div className="relative max-w-6xl mx-auto">
         <div className="flex flex-col gap-6 max-w-sm">
