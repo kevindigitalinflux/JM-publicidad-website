@@ -1,70 +1,83 @@
 import { useTranslation } from 'react-i18next';
-import { PortfolioGrid } from '../components/sections/PortfolioGrid';
-import { TestimonialsSection } from '../components/sections/TestimonialsSection';
+import { InfiniteCarousel } from '../components/portfolio/InfiniteCarousel';
 import { SEO } from '../components/SEO';
 import { SchemaOrg } from '../components/SchemaOrg';
 
-/** Studio Capabilities spec sheet */
-function StudioCapabilities() {
-  const { t } = useTranslation();
+// Client logos
+import abrus       from '../assets/clients/abrus.png';
+import adelca      from '../assets/clients/adelca.png';
+import continental from '../assets/clients/continental.png';
+import softlanding from '../assets/clients/softlanding.png';
+import sucesores   from '../assets/clients/sucesores.png';
+import toscana     from '../assets/clients/toscana.png';
 
-  const rows = [
-    { label: t('portfolio.format_range_label'), value: t('portfolio.format_range_value') },
-    { label: t('portfolio.ink_systems_label'),  value: t('portfolio.ink_systems_value')  },
-    { label: t('portfolio.stock_library_label'), value: t('portfolio.stock_library_value') },
-  ];
+// Catalogue images (text-free transparent PNGs — show product variety)
+import catRotulos       from '../assets/media/catalogue/rotulos.png';
+import catPantallas     from '../assets/media/catalogue/pantallas.png';
+import catTotems        from '../assets/media/catalogue/totems.png';
+import catVideoWall     from '../assets/media/catalogue/video-wall.png';
+import catEscritura     from '../assets/media/catalogue/souvenirs-escritura.png';
+import catIndumentaria  from '../assets/media/catalogue/souvenirs-indumentaria.png';
+import catAccesorios    from '../assets/media/catalogue/souvenirs-accesorios.png';
+import catEventos       from '../assets/media/catalogue/souvenirs-eventos.png';
+import catPapeleria     from '../assets/media/catalogue/print-papeleria.png';
+import catImpresos      from '../assets/media/catalogue/print-impresos.png';
+import catVehicular     from '../assets/media/catalogue/vehicular.png';
 
-  return (
-    <section className="bg-jm-bg-card rounded-tl-[32px] rounded-tr-[32px] px-6 pt-20 pb-12 mx-0">
-      <div className="max-w-lg mx-auto lg:max-w-3xl">
-        <h2 className="font-manrope font-extrabold text-jm-heading text-[30px] leading-[36px] mb-8">
-          {t('portfolio.capabilities_title')}
-        </h2>
-        <dl className="flex flex-col gap-6">
-          {rows.map(({ label, value }, i) => (
-            <div key={label}>
-              {i > 0 && <div className="h-px bg-[rgba(197,200,189,0.1)] mb-6" aria-hidden="true" />}
-              <div className="flex gap-4 items-start">
-                <dt className="font-inter font-semibold text-jm-primary text-sm w-28 shrink-0 leading-5">{label}</dt>
-                <dd className="font-inter text-jm-body text-sm leading-5">{value}</dd>
-              </div>
-            </div>
-          ))}
-        </dl>
-      </div>
-    </section>
-  );
-}
+// Pop-up and roll-up photos loaded dynamically
+type ImageMod = { default: string };
+const rawPopups  = import.meta.glob<ImageMod>('../assets/media/portfolio/popups/*',  { eager: true });
+const rawRollups = import.meta.glob<ImageMod>('../assets/media/portfolio/rollups/*', { eager: true });
+
+const popupImages  = Object.values(rawPopups).map(m  => m.default);
+const rollupImages = Object.values(rawRollups).map(m => m.default);
+
+const CLIENT_LOGOS = [
+  { src: abrus,       alt: 'Abrus'       },
+  { src: adelca,      alt: 'Adelca'      },
+  { src: continental, alt: 'Continental' },
+  { src: softlanding, alt: 'SoftLanding' },
+  { src: sucesores,   alt: 'Sucesores'   },
+  { src: toscana,     alt: 'Toscana'     },
+];
+
+const CATALOGUE_IMAGES = [
+  catRotulos, catPantallas, catTotems, catVideoWall,
+  catEscritura, catIndumentaria, catAccesorios,
+  catEventos, catPapeleria, catImpresos, catVehicular,
+];
 
 const PORTFOLIO_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: 'JM Publicidad Portfolio',
-  description: 'A curated collection of architectural advertising and precision print productions from JM Publicidad studio.',
+  description: 'Pop ups, roll ups y trabajos publicitarios de JM Publicidad en Quito, Ecuador.',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Modernism Revived', description: 'Print production project for Studio Althea.' },
-    { '@type': 'ListItem', position: 2, name: 'Copper Series', description: 'Precision foil stamping print campaign for Luna & Co.' },
-    { '@type': 'ListItem', position: 3, name: 'Urban Canvas', description: 'Large-format urban advertising project for Chronos.' },
-    { '@type': 'ListItem', position: 4, name: 'Ethereal Packaging', description: 'Brand identity and packaging for Nordis Luxe.' },
+    { '@type': 'ListItem', position: 1, name: 'Pop Ups' },
+    { '@type': 'ListItem', position: 2, name: 'Roll Ups' },
+    { '@type': 'ListItem', position: 3, name: 'Brandeo Vehicular' },
   ],
 };
 
-/** Portfolio page — project gallery, studio capabilities, testimonials */
+/** Portfolio page — client logos, pop-up and roll-up infinite carousels, catalogue variety */
 export function PortfolioPage() {
   const { t } = useTranslation();
 
   return (
     <main className="bg-jm-bg min-h-screen pt-[60px]">
       <SEO
-        title="Portfolio — Advertising &amp; Print Projects | JM Publicidad"
-        description="Browse JM Publicidad's portfolio of precision print production and advertising campaigns — large-format signage, brand identity, packaging, and vehicle branding."
+        title="Portafolio — Pop Ups, Roll Ups y Publicidad Exterior | JM Publicidad"
+        description="Trabajos reales de JM Publicidad: pop ups, roll ups, brandeo vehicular, pantallas digitales y souvenirs corporativos en Quito, Ecuador."
         path="/portfolio"
       />
       <SchemaOrg schema={PORTFOLIO_SCHEMA} />
 
       {/* Hero */}
-      <section className="px-6 pt-10 pb-12 max-w-lg mx-auto lg:max-w-3xl">
-        <h1 className="font-manrope font-extrabold text-jm-heading text-[48px] leading-[48px] tracking-[-1.2px] mb-4">
+      <section className="px-6 pt-10 pb-14 max-w-lg mx-auto lg:max-w-3xl">
+        <p className="font-inter font-semibold text-jm-primary text-[11px] tracking-[2.2px] uppercase leading-[16.5px] mb-3">
+          Portfolio
+        </p>
+        <h1 className="font-manrope font-extrabold text-jm-heading text-[36px] leading-[40px] tracking-[-0.9px] mb-4">
           {t('portfolio.title')}
         </h1>
         <p className="font-inter text-jm-body text-base leading-[26px]">
@@ -72,9 +85,52 @@ export function PortfolioPage() {
         </p>
       </section>
 
-      <PortfolioGrid />
-      <StudioCapabilities />
-      <TestimonialsSection />
+      {/* Client logos */}
+      <section className="pb-16 overflow-hidden">
+        <p className="font-inter font-semibold text-jm-primary text-[11px] tracking-[2.2px] uppercase leading-[16.5px] mb-6 px-6 max-w-lg mx-auto lg:max-w-3xl">
+          {t('portfolio.clients_label')}
+        </p>
+        <div className="overflow-hidden group">
+          <div
+            className="flex items-center gap-12 w-max animate-scroll-left group-hover:[animation-play-state:paused]"
+            style={{ animationDuration: '30s' }}
+          >
+            {[...CLIENT_LOGOS, ...CLIENT_LOGOS, ...CLIENT_LOGOS].map(({ src, alt }, i) => (
+              <img
+                key={i}
+                src={src}
+                alt={alt}
+                loading="lazy"
+                className="h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pop Ups carousel — scrolls right */}
+      <section className="pb-16 bg-jm-bg-section py-12">
+        <p className="font-inter font-semibold text-jm-primary text-[11px] tracking-[2.2px] uppercase leading-[16.5px] mb-6 px-6 max-w-lg mx-auto lg:max-w-3xl">
+          {t('portfolio.pop_ups_label')}
+        </p>
+        <InfiniteCarousel images={popupImages} direction="right" speed={50} imageHeight={320} />
+      </section>
+
+      {/* Roll Ups carousel — scrolls left */}
+      <section className="py-12">
+        <p className="font-inter font-semibold text-jm-primary text-[11px] tracking-[2.2px] uppercase leading-[16.5px] mb-6 px-6 max-w-lg mx-auto lg:max-w-3xl">
+          {t('portfolio.roll_ups_label')}
+        </p>
+        <InfiniteCarousel images={rollupImages} direction="left" speed={45} imageHeight={320} />
+      </section>
+
+      {/* Variedad de trabajos — catalogue product images */}
+      <section className="py-12 bg-jm-bg-section">
+        <p className="font-inter font-semibold text-jm-primary text-[11px] tracking-[2.2px] uppercase leading-[16.5px] mb-6 px-6 max-w-lg mx-auto lg:max-w-3xl">
+          {t('portfolio.variety_label')}
+        </p>
+        <InfiniteCarousel images={CATALOGUE_IMAGES} direction="right" speed={55} imageHeight={280} />
+      </section>
     </main>
   );
 }

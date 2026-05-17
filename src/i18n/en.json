@@ -257,19 +257,12 @@
     }
   },
   "portfolio": {
-    "title": "Our Work",
-    "description": "A selection of projects we have completed for businesses and brands in Quito and across Ecuador.",
-    "roll_ups_title": "Roll Ups",
-    "roll_ups_description": "Portable large-format structures for events, trade shows and points of sale. Printed at 2400 ppi, full colour.",
-    "pop_ups_title": "Pop Ups",
-    "pop_ups_description": "High-impact modular displays for brand activations, corporate events and service points.",
-    "capabilities_title": "Our Capabilities",
-    "resolution_label": "Print Resolution",
-    "resolution_value": "2400 ppi on our own large-format ecosolvent machinery.",
-    "formats_label": "Formats",
-    "formats_value": "From business cards to large-format billboards and vehicle branding.",
-    "finishing_label": "Finishes",
-    "finishing_value": "Gloss, matte, UV varnish and adhesive vinyl."
+    "title": "Some of Our Work",
+    "description": "A selection of advertising and print production projects completed for businesses and brands in Quito and across Ecuador.",
+    "clients_label": "Some of Our Clients",
+    "pop_ups_label": "Pop Ups",
+    "roll_ups_label": "Roll Ups",
+    "variety_label": "More of Our Work"
   },
   "contact": {
     "title": "Get In Touch",

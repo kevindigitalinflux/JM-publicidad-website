@@ -257,19 +257,12 @@
     }
   },
   "portfolio": {
-    "title": "Nuestros Trabajos",
+    "title": "Algunos de nuestros trabajos",
     "description": "Una muestra de los proyectos que hemos realizado para empresas y marcas en Quito y Ecuador.",
-    "roll_ups_title": "Roll Ups",
-    "roll_ups_description": "Estructuras portátiles de gran formato para eventos, ferias y puntos de venta. Impresión a 2400 ppi, full color.",
-    "pop_ups_title": "Pop Ups",
-    "pop_ups_description": "Displays modulares de alto impacto para activaciones de marca, eventos corporativos y puntos de atención.",
-    "capabilities_title": "Nuestra Capacidad",
-    "resolution_label": "Resolución de Impresión",
-    "resolution_value": "2400 ppi en maquinaria ecosolvente gran formato propia.",
-    "formats_label": "Formatos",
-    "formats_value": "Desde tarjetas de presentación hasta vallas y brandeo vehicular de gran formato.",
-    "finishing_label": "Acabados",
-    "finishing_value": "Brillante, mate, barniz UV y adhesivo vinil."
+    "clients_label": "Algunos de nuestros clientes",
+    "pop_ups_label": "Pop Ups",
+    "roll_ups_label": "Roll Ups",
+    "variety_label": "Variedad de trabajos"
   },
   "contact": {
     "title": "Contáctanos",
