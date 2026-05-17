@@ -7,11 +7,30 @@ export function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-jm-bg-section px-8 py-12 flex flex-col items-center gap-8">
+    <footer className="bg-jm-bg-section px-8 py-12 flex flex-col items-center gap-10">
       <div className="flex flex-col items-center gap-3 text-center">
         <img src={logo} alt="JM Publicidad" className="h-10 w-auto opacity-80" />
-        <p className="font-inter text-sm text-jm-body/70 max-w-[200px] leading-5">
+        <p className="font-inter text-sm text-jm-body/70 max-w-[220px] leading-5">
           {t('footer.tagline')}
+        </p>
+      </div>
+
+      {/* Contact details */}
+      <div className="flex flex-col items-center gap-3 text-center">
+        <a
+          href={`tel:${t('footer.phone').replace(/\s/g, '')}`}
+          className="font-inter text-sm text-jm-body/80 hover:text-jm-primary transition-colors"
+        >
+          {t('footer.phone')}
+        </a>
+        <a
+          href={`mailto:${t('footer.email')}`}
+          className="font-inter text-sm text-jm-body/80 hover:text-jm-primary transition-colors"
+        >
+          {t('footer.email')}
+        </a>
+        <p className="font-inter text-sm text-jm-body/60 max-w-[260px] leading-5">
+          {t('footer.address')}
         </p>
       </div>
 
