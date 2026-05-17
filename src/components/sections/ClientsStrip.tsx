@@ -30,6 +30,8 @@ function LogoTrack() {
           <img
             src={src}
             alt={alt}
+            width={120}
+            height={52}
             className="max-h-[52px] max-w-[120px] w-auto h-auto object-contain select-none"
             draggable={false}
           />
