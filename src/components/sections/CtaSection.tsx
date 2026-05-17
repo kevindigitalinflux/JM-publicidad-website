@@ -1,27 +1,27 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import ctaBg from '../../assets/media/cta/cta-bg.jpg';
 
-/**
- * Full-width CTA banner — "Ready to give your brand visibility?"
- * Background image slot: drop entrepreneur-bg.jpg into src/assets/media/cta/ and
- * replace the CSS decorative layer with an <img> import when ready.
- */
+/** Full-width CTA banner — "Ready to give your brand visibility?" */
 export function CtaSection() {
   const { t } = useTranslation();
 
   return (
     <section className="bg-jm-primary relative overflow-hidden py-24 px-6">
-      {/* Decorative right-side treatment — placeholder until entrepreneur photo is added */}
-      <div className="absolute right-0 top-0 h-full w-[55%] pointer-events-none" aria-hidden="true">
-        {/* Large soft orb — upper right */}
-        <div className="absolute top-[-80px] right-[-80px] w-[420px] h-[420px] rounded-full bg-white/[0.06] blur-[60px]" />
-        {/* Mid orb — centre right */}
-        <div className="absolute top-[30%] right-[5%] w-[280px] h-[280px] rounded-full bg-white/[0.04] blur-[40px]" />
-        {/* Small accent orb — lower right */}
-        <div className="absolute bottom-[-40px] right-[15%] w-[180px] h-[180px] rounded-full bg-white/[0.07] blur-[30px]" />
-        {/* Subtle radial sweep from far right */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_right_center,rgba(255,255,255,0.08)_0%,transparent_65%)]" />
-      </div>
+      {/* Client installation photo — right side, blended into green at 13% opacity */}
+      <img
+        src={ctaBg}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-y-0 right-0 h-full w-[60%] object-cover object-left opacity-[0.13] pointer-events-none select-none"
+      />
+
+      {/* Subtle left-side fade so the image doesn't bleed into the text column */}
+      <div
+        className="absolute inset-y-0 right-0 w-[60%] pointer-events-none"
+        aria-hidden="true"
+        style={{ background: 'linear-gradient(to right, #536049 0%, transparent 20%)' }}
+      />
 
       <div className="relative max-w-6xl mx-auto">
         <div className="flex flex-col gap-6 max-w-sm">
