@@ -7,15 +7,20 @@ interface InfiniteCarouselProps {
   imageHeight?: number;
 }
 
-/** Infinite auto-scrolling image strip. Duplicates images for seamless loop. */
+/** Infinite auto-scrolling image strip. Duplicates images for a seamless loop. */
 export function InfiniteCarousel({ images, direction, speed = 40, imageHeight = 300 }: InfiniteCarouselProps) {
-  const animClass = direction === 'left' ? 'animate-scroll-left' : 'animate-scroll-right';
+  const animationName = direction === 'left' ? 'jm-scroll-left' : 'jm-scroll-right';
 
   return (
-    <div className="overflow-hidden group">
+    <div style={{ overflow: 'hidden' }}>
       <div
-        className={`flex gap-4 w-max ${animClass} group-hover:[animation-play-state:paused]`}
-        style={{ animationDuration: `${speed}s` }}
+        className="jm-carousel-track"
+        style={{
+          display: 'flex',
+          gap: '1rem',
+          width: 'max-content',
+          animation: `${animationName} ${speed}s linear infinite`,
+        }}
       >
         {[...images, ...images].map((src, i) => (
           <img
@@ -24,8 +29,7 @@ export function InfiniteCarousel({ images, direction, speed = 40, imageHeight = 
             alt=""
             aria-hidden="true"
             loading="lazy"
-            style={{ height: imageHeight }}
-            className="w-auto flex-shrink-0 rounded-xl object-cover"
+            style={{ height: imageHeight, width: 'auto', flexShrink: 0, borderRadius: '0.75rem', objectFit: 'cover' }}
           />
         ))}
       </div>
