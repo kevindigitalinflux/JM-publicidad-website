@@ -64,7 +64,14 @@ export function ClientsStrip() {
         />
 
         {/* Scrolling track — two copies for seamless loop */}
-        <div className="animate-marquee flex">
+        <div
+          style={{
+            display: 'flex',
+            width: 'max-content',
+            animation: 'jm-scroll-left 28s linear infinite',
+            willChange: 'transform',
+          }}
+        >
           <LogoTrack />
           <LogoTrack />
         </div>
