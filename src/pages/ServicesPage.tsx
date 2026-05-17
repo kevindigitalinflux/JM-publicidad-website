@@ -1,10 +1,13 @@
 import { useTranslation } from 'react-i18next';
-import { ServicesBento } from '../components/sections/ServicesBento';
+import { ExteriorSection } from '../components/services/ExteriorSection';
+import { DigitalSection } from '../components/services/DigitalSection';
+import { SouvenirsSection } from '../components/services/SouvenirsSection';
+import { PrintSection } from '../components/services/PrintSection';
 import { FAQSection } from '../components/sections/FAQSection';
 import { SEO } from '../components/SEO';
 import { SchemaOrg } from '../components/SchemaOrg';
 
-/** Studio Specs spec-sheet — lead time, software, materials */
+/** Studio Specs spec-sheet — machinery, resolution, finishes */
 function StudioSpecs() {
   const { t } = useTranslation();
 
@@ -47,7 +50,7 @@ const FAQ_SCHEMA = {
   ],
 };
 
-/** Services page — hero, bento service cards, FAQ, studio specs */
+/** Services page — full catalogue: Exterior, Digital, Souvenirs, Print, FAQ, Specs */
 export function ServicesPage() {
   const { t } = useTranslation();
 
@@ -60,7 +63,7 @@ export function ServicesPage() {
       />
       <SchemaOrg schema={FAQ_SCHEMA} />
 
-      {/* Hero */}
+      {/* Page hero */}
       <section className="px-6 pt-10 pb-12 max-w-lg mx-auto lg:max-w-3xl">
         <p className="font-inter font-semibold text-jm-primary text-[11px] tracking-[2.2px] uppercase leading-[16.5px] mb-3">
           {t('services_page.label')}
@@ -73,7 +76,10 @@ export function ServicesPage() {
         </p>
       </section>
 
-      <ServicesBento />
+      <ExteriorSection />
+      <DigitalSection />
+      <SouvenirsSection />
+      <PrintSection />
       <FAQSection />
       <StudioSpecs />
     </main>
