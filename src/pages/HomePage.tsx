@@ -13,13 +13,24 @@ const LOCAL_BUSINESS_SCHEMA = {
   name: 'JM Publicidad',
   description: 'Producción publicitaria de alta calidad en Quito, Ecuador. Rótulos, roll ups, pop ups, brandeo vehicular, publicidad digital y medios impresos.',
   url: 'https://jm-publicidad-website.pages.dev',
+  telephone: '+593960051007',
+  email: 'jmpublicidad@outlook.es',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'Rio de Janeiro OE3-127 Y America',
     addressLocality: 'Quito',
     addressRegion: 'Pichincha',
     addressCountry: 'EC',
   },
-  areaServed: { '@type': 'Country', name: 'Ecuador' },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -0.2299,
+    longitude: -78.5249,
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Quito' },
+    { '@type': 'Country', name: 'Ecuador' },
+  ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Servicios Publicitarios',

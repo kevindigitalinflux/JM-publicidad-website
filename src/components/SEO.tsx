@@ -9,7 +9,7 @@ interface Props {
   path?: string;
 }
 
-/** Drop-in SEO head manager — sets title, description, OG, and canonical per page */
+/** Drop-in SEO head manager — sets title, description, OG, canonical, and locale per page */
 export function SEO({ title, description, path = '' }: Props) {
   const canonical = `${BASE_URL}${path}`;
 
@@ -18,10 +18,17 @@ export function SEO({ title, description, path = '' }: Props) {
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
+
+      {/* Open Graph */}
+      <meta property="og:type" content="website" />
+      <meta property="og:locale" content="es_EC" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
       <meta property="og:site_name" content={SITE_NAME} />
+
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
     </Helmet>
