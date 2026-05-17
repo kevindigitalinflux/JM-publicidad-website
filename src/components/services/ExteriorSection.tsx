@@ -5,8 +5,8 @@ import { SubSectionLabel } from './SubSectionLabel';
 import { ProductCard } from './ProductCard';
 import popupSuzuki from '../../assets/media/exterior/popup-suzuki.jpg';
 import rollupObi from '../../assets/media/exterior/rollup-obi.jpg';
-import vehicularImg from '../../assets/media/catalogue/vehicular.png';
-import rotulosImg from '../../assets/media/catalogue/rotulos.png';
+import vehicularImg from '../../assets/media/catalogue/vehicular.webp';
+import rotulosImg from '../../assets/media/catalogue/rotulos.webp';
 
 /** Publicidad Exterior — Rótulos, Displays, Brandeo Vehicular */
 export function ExteriorSection() {

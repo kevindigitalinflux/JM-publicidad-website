@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { CategoryHeader } from './CategoryHeader';
 import { SubSectionLabel } from './SubSectionLabel';
 import { ProductCard } from './ProductCard';
-import pantallasImg from '../../assets/media/catalogue/pantallas.png';
-import totemsImg from '../../assets/media/catalogue/totems.png';
-import videoWallImg from '../../assets/media/catalogue/video-wall.png';
+import pantallasImg from '../../assets/media/catalogue/pantallas.webp';
+import totemsImg from '../../assets/media/catalogue/totems.webp';
+import videoWallImg from '../../assets/media/catalogue/video-wall.webp';
 
 /** Publicidad Digital — Pantallas, Tótems, Video Wall */
 export function DigitalSection() {

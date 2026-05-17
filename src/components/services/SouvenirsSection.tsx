@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { CategoryHeader } from './CategoryHeader';
 import { SubSectionLabel } from './SubSectionLabel';
 import { ProductCard } from './ProductCard';
-import escrituraImg from '../../assets/media/catalogue/souvenirs-escritura.png';
-import indumentariaImg from '../../assets/media/catalogue/souvenirs-indumentaria.png';
-import accesoriosImg from '../../assets/media/catalogue/souvenirs-accesorios.png';
-import eventosImg from '../../assets/media/catalogue/souvenirs-eventos.png';
+import escrituraImg from '../../assets/media/catalogue/souvenirs-escritura.webp';
+import indumentariaImg from '../../assets/media/catalogue/souvenirs-indumentaria.webp';
+import accesoriosImg from '../../assets/media/catalogue/souvenirs-accesorios.webp';
+import eventosImg from '../../assets/media/catalogue/souvenirs-eventos.webp';
 
 /** Souvenirs Publicitarios — Stationery, Clothing, Accessories, Events */
 export function SouvenirsSection() {

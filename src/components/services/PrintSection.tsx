@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { CategoryHeader } from './CategoryHeader';
 import { SubSectionLabel } from './SubSectionLabel';
 import { ProductCard } from './ProductCard';
-import papeleriaImg from '../../assets/media/catalogue/print-papeleria.png';
-import impresosImg from '../../assets/media/catalogue/print-impresos.png';
+import papeleriaImg from '../../assets/media/catalogue/print-papeleria.webp';
+import impresosImg from '../../assets/media/catalogue/print-impresos.webp';
 
 /** Medios Impresos — Papelería Básica + Print Collateral */
 export function PrintSection() {

@@ -1,8 +1,8 @@
-import toscana from '../../assets/clients/toscana.png';
+import toscana from '../../assets/clients/toscana.webp';
 import sucesores from '../../assets/clients/sucesores.png';
-import adelca from '../../assets/clients/adelca.png';
-import continental from '../../assets/clients/continental.png';
-import softlanding from '../../assets/clients/softlanding.png';
+import adelca from '../../assets/clients/adelca.webp';
+import continental from '../../assets/clients/continental.webp';
+import softlanding from '../../assets/clients/softlanding.webp';
 import abrus from '../../assets/clients/abrus.png';
 
 const LOGOS = [

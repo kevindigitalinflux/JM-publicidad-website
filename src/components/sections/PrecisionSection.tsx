@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import precisionPrint  from '../../assets/sections/precision-print.jpg';
-import precisionFinish from '../../assets/sections/precision-finish.jpg';
+import precisionPrint  from '../../assets/sections/precision-print.webp';
+import precisionFinish from '../../assets/sections/precision-finish.webp';
 
 
 const features = [

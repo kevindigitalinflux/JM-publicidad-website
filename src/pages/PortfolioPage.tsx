@@ -5,24 +5,24 @@ import { SchemaOrg } from '../components/SchemaOrg';
 
 // Client logos
 import abrus       from '../assets/clients/abrus.png';
-import adelca      from '../assets/clients/adelca.png';
-import continental from '../assets/clients/continental.png';
-import softlanding from '../assets/clients/softlanding.png';
+import adelca      from '../assets/clients/adelca.webp';
+import continental from '../assets/clients/continental.webp';
+import softlanding from '../assets/clients/softlanding.webp';
 import sucesores   from '../assets/clients/sucesores.png';
-import toscana     from '../assets/clients/toscana.png';
+import toscana     from '../assets/clients/toscana.webp';
 
-// Catalogue images (text-free transparent PNGs — show product variety)
-import catRotulos       from '../assets/media/catalogue/rotulos.png';
-import catPantallas     from '../assets/media/catalogue/pantallas.png';
-import catTotems        from '../assets/media/catalogue/totems.png';
-import catVideoWall     from '../assets/media/catalogue/video-wall.png';
-import catEscritura     from '../assets/media/catalogue/souvenirs-escritura.png';
-import catIndumentaria  from '../assets/media/catalogue/souvenirs-indumentaria.png';
-import catAccesorios    from '../assets/media/catalogue/souvenirs-accesorios.png';
-import catEventos       from '../assets/media/catalogue/souvenirs-eventos.png';
-import catPapeleria     from '../assets/media/catalogue/print-papeleria.png';
-import catImpresos      from '../assets/media/catalogue/print-impresos.png';
-import catVehicular     from '../assets/media/catalogue/vehicular.png';
+// Catalogue images (WebP — show product variety)
+import catRotulos       from '../assets/media/catalogue/rotulos.webp';
+import catPantallas     from '../assets/media/catalogue/pantallas.webp';
+import catTotems        from '../assets/media/catalogue/totems.webp';
+import catVideoWall     from '../assets/media/catalogue/video-wall.webp';
+import catEscritura     from '../assets/media/catalogue/souvenirs-escritura.webp';
+import catIndumentaria  from '../assets/media/catalogue/souvenirs-indumentaria.webp';
+import catAccesorios    from '../assets/media/catalogue/souvenirs-accesorios.webp';
+import catEventos       from '../assets/media/catalogue/souvenirs-eventos.webp';
+import catPapeleria     from '../assets/media/catalogue/print-papeleria.webp';
+import catImpresos      from '../assets/media/catalogue/print-impresos.webp';
+import catVehicular     from '../assets/media/catalogue/vehicular.webp';
 
 // Pop-up and roll-up photos loaded dynamically
 type ImageMod = { default: string };
