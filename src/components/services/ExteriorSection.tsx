@@ -48,17 +48,19 @@ export function ExteriorSection() {
         {/* Displays & Point of Sale */}
         <div>
           <SubSectionLabel label={e('displays_label')} />
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-            <ProductCard title={e('rollups_title')} specs={[e('rollups_spec_1'), e('rollups_spec_2'), e('rollups_spec_3')]} />
-            <ProductCard title={e('vinil_title')} specs={[e('vinil_spec_1'), e('vinil_spec_2')]} />
-            <ProductCard title={e('microperforado_title')} specs={[e('microperforado_spec_1'), e('microperforado_spec_2')]} />
-            <ProductCard title={e('triangulos_title')} specs={[e('triangulos_spec_1'), e('triangulos_spec_2'), e('triangulos_spec_3')]} />
-            <ProductCard title={e('exibidores_title')} specs={[e('exibidores_spec_1'), e('exibidores_spec_2'), e('exibidores_spec_3')]} />
-            <ProductCard title={e('stands_title')} specs={[e('stands_spec_1'), e('stands_spec_2'), e('stands_spec_3')]} />
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <img src={popupSuzuki} alt="Pop-up Suzuki — JM Publicidad" className="rounded-xl object-cover aspect-[3/4] w-full" loading="lazy" />
-            <img src={rollupObi} alt="Roll-up OBI — JM Publicidad" className="rounded-xl object-cover aspect-[3/4] w-full" loading="lazy" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+            <div className="grid grid-cols-2 gap-3">
+              <img src={popupSuzuki} alt="Pop-up Suzuki — JM Publicidad" className="rounded-xl object-cover aspect-[3/4] w-full" loading="lazy" />
+              <img src={rollupObi} alt="Roll-up OBI — JM Publicidad" className="rounded-xl object-cover aspect-[3/4] w-full" loading="lazy" />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <ProductCard title={e('rollups_title')} specs={[e('rollups_spec_1'), e('rollups_spec_2'), e('rollups_spec_3')]} />
+              <ProductCard title={e('vinil_title')} specs={[e('vinil_spec_1'), e('vinil_spec_2')]} />
+              <ProductCard title={e('microperforado_title')} specs={[e('microperforado_spec_1'), e('microperforado_spec_2')]} />
+              <ProductCard title={e('triangulos_title')} specs={[e('triangulos_spec_1'), e('triangulos_spec_2'), e('triangulos_spec_3')]} />
+              <ProductCard title={e('exibidores_title')} specs={[e('exibidores_spec_1'), e('exibidores_spec_2'), e('exibidores_spec_3')]} />
+              <ProductCard title={e('stands_title')} specs={[e('stands_spec_1'), e('stands_spec_2'), e('stands_spec_3')]} />
+            </div>
           </div>
         </div>
 
@@ -66,7 +68,6 @@ export function ExteriorSection() {
         <div>
           <SubSectionLabel label={e('vehicular_label')} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-            <img src={vehicularImg} alt="Brandeo vehicular — JM Publicidad" className="rounded-xl object-cover w-full aspect-video" loading="lazy" />
             <div className="flex flex-col gap-4">
               <p className="font-inter text-jm-body text-sm leading-6">{e('vehicular_description')}</p>
               <ul className="flex flex-col gap-2">
@@ -78,6 +79,7 @@ export function ExteriorSection() {
                 ))}
               </ul>
             </div>
+            <img src={vehicularImg} alt="Brandeo vehicular — JM Publicidad" className="rounded-xl object-cover w-full aspect-video" loading="lazy" />
           </div>
         </div>
 
