@@ -8,8 +8,16 @@ import pantalla1Img from '../../assets/media/digital/pantalla-1.png';
 import pantalla2Img from '../../assets/media/digital/pantalla-2.png';
 import pantalla3Img from '../../assets/media/digital/pantalla-3.png';
 import pantalla4Img from '../../assets/media/digital/pantalla-4.png';
-import totemsImg from '../../assets/media/digital/totems-new.png';
-import videoWallImg from '../../assets/media/digital/video-wall-new.png';
+import totem1Img from '../../assets/media/digital/totem-1.png';
+import totem2Img from '../../assets/media/digital/totem-2.png';
+import totem3Img from '../../assets/media/digital/totem-3.png';
+import totem4Img from '../../assets/media/digital/totem-4.png';
+import videoWall1Img from '../../assets/media/digital/video-wall-1.png';
+import videoWall2Img from '../../assets/media/digital/video-wall-2.png';
+import videoWall3Img from '../../assets/media/digital/video-wall-3.png';
+import videoWall4Img from '../../assets/media/digital/video-wall-4.png';
+import videoWall5Img from '../../assets/media/digital/video-wall-5.png';
+import videoWall6Img from '../../assets/media/digital/video-wall-6.png';
 
 /** Publicidad Digital — Pantallas, Tótems, Video Wall */
 export function DigitalSection() {
@@ -46,7 +54,12 @@ export function DigitalSection() {
         <div>
           <SubSectionLabel label={d('totems_label')} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-            <img src={totemsImg} alt="Tótems LED — JM Publicidad" className="reveal-img rounded-xl w-full object-cover order-last md:order-none mix-blend-multiply" loading="lazy" />
+            <div className="grid grid-cols-2 gap-4 order-last md:order-none">
+              <img src={totem1Img} alt="Tótem LED — JM Publicidad"          className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={totem2Img} alt="Tótem doble — JM Publicidad"        className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={totem3Img} alt="Tótem cap touch — JM Publicidad"    className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={totem4Img} alt="Tótem outdoor — JM Publicidad"      className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+            </div>
             <div className="grid grid-cols-2 gap-4">
               <ProductCard title={d('totem_led_title')} specs={[]} />
               <ProductCard title={d('totem_doble_title')} specs={[]} />
@@ -60,6 +73,14 @@ export function DigitalSection() {
         <div>
           <SubSectionLabel label={d('video_label')} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+            <div className="grid grid-cols-2 gap-4 order-last md:order-none">
+              <img src={videoWall1Img} alt="Video wall — JM Publicidad"              className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={videoWall2Img} alt="Pantalla colgante — JM Publicidad"       className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={videoWall3Img} alt="Pantalla translúcida — JM Publicidad"    className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={videoWall4Img} alt="Menu board digital — JM Publicidad"      className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={videoWall5Img} alt="Poster LED — JM Publicidad"              className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={videoWall6Img} alt="Cap touch signage — JM Publicidad"       className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+            </div>
             <div className="grid grid-cols-2 gap-4">
               <ProductCard title={d('video_wall_title')} specs={[d('video_wall_spec')]} />
               <ProductCard title={d('colgante_title')} specs={[d('colgante_spec')]} />
@@ -68,7 +89,6 @@ export function DigitalSection() {
               <ProductCard title={d('poster_led_title')} specs={[]} />
               <ProductCard title={d('cap_touch_signage_title')} specs={[]} />
             </div>
-            <img src={videoWallImg} alt="Video wall y pantallas colgantes — JM Publicidad" className="reveal-img rounded-xl w-full object-cover mix-blend-multiply" loading="lazy" />
           </div>
         </div>
 

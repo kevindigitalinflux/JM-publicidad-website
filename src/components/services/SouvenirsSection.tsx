@@ -4,7 +4,12 @@ import { CategoryHeader } from './CategoryHeader';
 import { SubSectionLabel } from './SubSectionLabel';
 import { ProductCard } from './ProductCard';
 import { useImageReveal } from '../../hooks/useScrollReveal';
-import escrituraImg from '../../assets/media/catalogue/souvenirs-escritura-new.png';
+import escritura1Img from '../../assets/media/catalogue/escritura-1.png';
+import escritura2Img from '../../assets/media/catalogue/escritura-2.png';
+import escritura3Img from '../../assets/media/catalogue/escritura-3.png';
+import escritura4Img from '../../assets/media/catalogue/escritura-4.png';
+import escritura5Img from '../../assets/media/catalogue/escritura-5.png';
+import escritura6Img from '../../assets/media/catalogue/escritura-6.png';
 import indumentaria1Img from '../../assets/media/catalogue/indumentaria-1.png';
 import indumentaria2Img from '../../assets/media/catalogue/indumentaria-2.png';
 import indumentaria3Img from '../../assets/media/catalogue/indumentaria-3.png';
@@ -34,7 +39,15 @@ export function SouvenirsSection() {
         <div>
           <SubSectionLabel label={s('escritura_label')} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 gap-4 order-last md:order-none">
+              <img src={escritura1Img} alt="Esferos publicitarios — JM Publicidad"   className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={escritura2Img} alt="Vasos publicitarios — JM Publicidad"      className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={escritura3Img} alt="Servilletas publicitarias — JM Publicidad" className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={escritura4Img} alt="Packaging publicitario — JM Publicidad"   className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={escritura5Img} alt="Habladores publicitarios — JM Publicidad" className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={escritura6Img} alt="Stickers publicitarios — JM Publicidad"   className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
               <ProductCard title={s('esferos_title')} specs={[s('esferos_spec_1'), s('esferos_spec_2')]} />
               <ProductCard title={s('vasos_title')} specs={[s('vasos_spec_1'), s('vasos_spec_2')]} />
               <ProductCard title={s('servilletas_title')} specs={[s('servilletas_spec_1'), s('servilletas_spec_2')]} />
@@ -42,7 +55,6 @@ export function SouvenirsSection() {
               <ProductCard title={s('habladores_title')} specs={[s('habladores_spec_1'), s('habladores_spec_2')]} />
               <ProductCard title={s('stickers_title')} specs={[s('stickers_spec_1'), s('stickers_spec_2'), s('stickers_spec_3')]} />
             </div>
-            <img src={escrituraImg} alt="Souvenirs publicitarios — JM Publicidad" className="reveal-img rounded-xl w-full object-cover mix-blend-multiply" loading="lazy" />
           </div>
         </div>
 
