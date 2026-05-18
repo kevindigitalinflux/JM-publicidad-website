@@ -4,8 +4,8 @@ import { CategoryHeader } from './CategoryHeader';
 import { SubSectionLabel } from './SubSectionLabel';
 import { ProductCard } from './ProductCard';
 import { useImageReveal } from '../../hooks/useScrollReveal';
-import papeleriaImg from '../../assets/media/catalogue/print-papeleria.webp';
-import impresosImg from '../../assets/media/catalogue/print-impresos.webp';
+import papeleriaImg from '../../assets/media/catalogue/papeleria-1.png';
+import impresosImg from '../../assets/media/catalogue/papeleria-2.png';
 
 /** Medios Impresos — Papelería Básica + Print Collateral */
 export function PrintSection() {
@@ -23,7 +23,7 @@ export function PrintSection() {
         <div>
           <SubSectionLabel label={p('papeleria_label')} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-            <img src={papeleriaImg} alt="Papelería corporativa — JM Publicidad" className="reveal-img rounded-xl w-full object-cover order-last md:order-none" loading="lazy" />
+            <img src={papeleriaImg} alt="Papelería corporativa — JM Publicidad" className="reveal-img rounded-xl w-full object-cover order-last md:order-none mix-blend-multiply" loading="lazy" />
             <div className="grid grid-cols-2 gap-4">
               <ProductCard title={p('tarjetas_title')} specs={[p('tarjetas_spec_1'), p('tarjetas_spec_2'), p('tarjetas_spec_3')]} />
               <ProductCard title={p('hojas_title')} specs={[p('hojas_spec_1'), p('hojas_spec_2')]} />
@@ -43,7 +43,7 @@ export function PrintSection() {
               <ProductCard title={p('dipticos_title')} specs={[p('dipticos_spec_1'), p('dipticos_spec_2'), p('dipticos_spec_3')]} />
               <ProductCard title={p('tripticos_title')} specs={[p('tripticos_spec_1'), p('tripticos_spec_2'), p('tripticos_spec_3')]} />
             </div>
-            <img src={impresosImg} alt="Impresos publicitarios — flyers, folletos, dípticos" className="reveal-img rounded-xl w-full object-cover" loading="lazy" />
+            <img src={impresosImg} alt="Impresos publicitarios — JM Publicidad" className="reveal-img rounded-xl w-full object-cover mix-blend-multiply" loading="lazy" />
           </div>
         </div>
 

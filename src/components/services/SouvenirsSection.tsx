@@ -4,9 +4,14 @@ import { CategoryHeader } from './CategoryHeader';
 import { SubSectionLabel } from './SubSectionLabel';
 import { ProductCard } from './ProductCard';
 import { useImageReveal } from '../../hooks/useScrollReveal';
-import escrituraImg from '../../assets/media/catalogue/souvenirs-escritura.webp';
-import indumentariaImg from '../../assets/media/catalogue/souvenirs-indumentaria.webp';
-import accesoriosImg from '../../assets/media/catalogue/souvenirs-accesorios.webp';
+import escrituraImg from '../../assets/media/catalogue/souvenirs-escritura-new.png';
+import indumentaria1Img from '../../assets/media/catalogue/indumentaria-1.png';
+import indumentaria2Img from '../../assets/media/catalogue/indumentaria-2.png';
+import indumentaria3Img from '../../assets/media/catalogue/indumentaria-3.png';
+import indumentaria4Img from '../../assets/media/catalogue/indumentaria-4.png';
+import indumentaria5Img from '../../assets/media/catalogue/indumentaria-5.png';
+import accesorios1Img from '../../assets/media/catalogue/accesorios-1.png';
+import accesorios2Img from '../../assets/media/catalogue/accesorios-2.png';
 import eventosImg from '../../assets/media/catalogue/souvenirs-eventos.webp';
 
 /** Souvenirs Publicitarios — Stationery, Clothing, Accessories, Events */
@@ -33,7 +38,7 @@ export function SouvenirsSection() {
               <ProductCard title={s('habladores_title')} specs={[s('habladores_spec_1'), s('habladores_spec_2')]} />
               <ProductCard title={s('stickers_title')} specs={[s('stickers_spec_1'), s('stickers_spec_2'), s('stickers_spec_3')]} />
             </div>
-            <img src={escrituraImg} alt="Souvenirs publicitarios — escritura y oficina" className="reveal-img rounded-xl w-full object-cover" loading="lazy" />
+            <img src={escrituraImg} alt="Souvenirs publicitarios — JM Publicidad" className="reveal-img rounded-xl w-full object-cover mix-blend-multiply" loading="lazy" />
           </div>
         </div>
 
@@ -41,7 +46,13 @@ export function SouvenirsSection() {
         <div>
           <SubSectionLabel label={s('indumentaria_label')} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-            <img src={indumentariaImg} alt="Uniformes y deportivos publicitarios — JM Publicidad" className="reveal-img rounded-xl w-full object-cover order-last md:order-none" loading="lazy" />
+            <div className="grid grid-cols-2 gap-4 order-last md:order-none">
+              <img src={indumentaria1Img} alt="Uniformes publicitarios — JM Publicidad" className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={indumentaria2Img} alt="Uniformes deportivos — JM Publicidad"    className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={indumentaria3Img} alt="Flash publicitarias — JM Publicidad"     className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={indumentaria4Img} alt="Agendas corporativas — JM Publicidad"    className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={indumentaria5Img} alt="Carnets corporativos — JM Publicidad"    className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+            </div>
             <div className="grid grid-cols-2 gap-4">
               <ProductCard title={s('uniformes_title')} specs={[s('uniformes_spec_1'), s('uniformes_spec_2'), s('uniformes_spec_3')]} />
               <ProductCard title={s('deportivos_title')} specs={[s('deportivos_spec_1'), s('deportivos_spec_2'), s('deportivos_spec_3')]} />
@@ -64,7 +75,10 @@ export function SouvenirsSection() {
               <ProductCard title={s('mousepad_title')} specs={[s('mousepad_spec_1'), s('mousepad_spec_2')]} />
               <ProductCard title={s('bolsos_title')} specs={[s('bolsos_spec_1'), s('bolsos_spec_2')]} />
             </div>
-            <img src={accesoriosImg} alt="Accesorios publicitarios — JM Publicidad" className="reveal-img rounded-xl w-full object-cover" loading="lazy" />
+            <div className="grid grid-cols-2 gap-3">
+              <img src={accesorios1Img} alt="Accesorios publicitarios — JM Publicidad" className="reveal-img rounded-xl w-full object-cover aspect-square mix-blend-multiply" loading="lazy" />
+              <img src={accesorios2Img} alt="Accesorios publicitarios — JM Publicidad" className="reveal-img rounded-xl w-full object-cover aspect-square mix-blend-multiply" loading="lazy" />
+            </div>
           </div>
         </div>
 
@@ -72,7 +86,7 @@ export function SouvenirsSection() {
         <div>
           <SubSectionLabel label={s('eventos_label')} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-            <img src={eventosImg} alt="Carpas y banderas publicitarias — JM Publicidad" className="reveal-img rounded-xl w-full object-cover order-last md:order-none" loading="lazy" />
+            <img src={eventosImg} alt="Carpas y banderas publicitarias — JM Publicidad" className="reveal-img rounded-xl w-full object-cover order-last md:order-none mix-blend-multiply" loading="lazy" />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <ProductCard title={s('carpas_title')} specs={[s('carpas_spec_1'), s('carpas_spec_2')]} />
               <ProductCard title={s('banderas_title')} specs={[s('banderas_spec_1'), s('banderas_spec_2')]} />
