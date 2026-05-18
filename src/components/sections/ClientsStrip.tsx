@@ -51,12 +51,24 @@ export function ClientsStrip() {
     const container = containerRef.current;
     const track = trackRef.current;
     if (!container || !track) return;
+
+    const setPlayState = (running: boolean) => {
+      track.style.animationPlayState = running ? 'running' : 'paused';
+    };
+
     const observer = new IntersectionObserver(
-      ([entry]) => { track.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused'; },
-      { threshold: 0 }
+      ([entry]) => setPlayState(entry.isIntersecting && !document.hidden),
+      { threshold: 0 },
     );
     observer.observe(container);
-    return () => observer.disconnect();
+
+    const onVisibility = () => setPlayState(!document.hidden);
+    document.addEventListener('visibilitychange', onVisibility);
+
+    return () => {
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', onVisibility);
+    };
   }, []);
 
   return (
@@ -84,6 +96,7 @@ export function ClientsStrip() {
         {/* Scrolling track — two copies for seamless loop */}
         <div
           ref={trackRef}
+          className="jm-carousel-track"
           style={{
             display: 'flex',
             width: 'max-content',

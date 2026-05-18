@@ -38,31 +38,24 @@ export function useScrollReveal<T extends HTMLElement = HTMLElement>() {
   return ref;
 }
 
-/** Bidirectional fade for all .reveal-img elements — fades in on scroll down, out on scroll up */
+/** Bidirectional fade for all .reveal-img elements — CSS transition toggled by IntersectionObserver */
 export function useImageReveal<T extends HTMLElement = HTMLElement>() {
   const ref = useRef<T>(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    const imgs = el.querySelectorAll<Element>('.reveal-img');
+    if (!imgs.length) return;
 
-    const ctx = gsap.context(() => {
-      const imgs = gsap.utils.toArray<HTMLElement>('.reveal-img', el);
-      if (!imgs.length) return;
-
-      gsap.set(imgs, { opacity: 0, y: 24 });
-
-      ScrollTrigger.batch(imgs, {
-        onEnter:     (batch) => gsap.to(batch, { opacity: 1, y: 0,   duration: 0.7, stagger: 0.12, ease: 'power2.out' }),
-        onLeave:     (batch) => gsap.to(batch, { opacity: 0, y: -24, duration: 0.5, stagger: 0.08, ease: 'power2.in' }),
-        onEnterBack: (batch) => gsap.to(batch, { opacity: 1, y: 0,   duration: 0.7, stagger: 0.12, ease: 'power2.out' }),
-        onLeaveBack: (batch) => gsap.to(batch, { opacity: 0, y: 24,  duration: 0.5, stagger: 0.08, ease: 'power2.in' }),
-        start: 'top 88%',
-        end:   'bottom 12%',
-      });
-    }, el);
-
-    return () => ctx.revert();
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
+      },
+      { rootMargin: '-8% 0px' },
+    );
+    imgs.forEach(img => io.observe(img));
+    return () => io.disconnect();
   }, []);
 
   return ref;
