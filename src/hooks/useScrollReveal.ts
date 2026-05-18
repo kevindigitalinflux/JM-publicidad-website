@@ -38,7 +38,7 @@ export function useScrollReveal<T extends HTMLElement = HTMLElement>() {
   return ref;
 }
 
-/** Fade-up reveal for all .reveal-img elements inside the returned ref container */
+/** Bidirectional fade for all .reveal-img elements — fades in on scroll down, out on scroll up */
 export function useImageReveal<T extends HTMLElement = HTMLElement>() {
   const ref = useRef<T>(null);
 
@@ -53,16 +53,12 @@ export function useImageReveal<T extends HTMLElement = HTMLElement>() {
       gsap.set(imgs, { opacity: 0, y: 24 });
 
       ScrollTrigger.batch(imgs, {
-        onEnter: (batch) =>
-          gsap.to(batch, {
-            opacity: 1,
-            y: 0,
-            duration: 0.7,
-            stagger: 0.12,
-            ease: 'power2.out',
-          }),
+        onEnter:     (batch) => gsap.to(batch, { opacity: 1, y: 0,   duration: 0.7, stagger: 0.12, ease: 'power2.out' }),
+        onLeave:     (batch) => gsap.to(batch, { opacity: 0, y: -24, duration: 0.5, stagger: 0.08, ease: 'power2.in' }),
+        onEnterBack: (batch) => gsap.to(batch, { opacity: 1, y: 0,   duration: 0.7, stagger: 0.12, ease: 'power2.out' }),
+        onLeaveBack: (batch) => gsap.to(batch, { opacity: 0, y: 24,  duration: 0.5, stagger: 0.08, ease: 'power2.in' }),
         start: 'top 88%',
-        once: true,
+        end:   'bottom 12%',
       });
     }, el);
 

@@ -12,18 +12,56 @@ import softlanding from '../assets/clients/softlanding.webp';
 import sucesores   from '../assets/clients/sucesores.png';
 import toscana     from '../assets/clients/toscana.webp';
 
-// Catalogue images (WebP — show product variety)
-import catRotulos       from '../assets/media/catalogue/rotulos.webp';
-import catPantallas     from '../assets/media/catalogue/pantallas.webp';
-import catTotems        from '../assets/media/catalogue/totems.webp';
-import catVideoWall     from '../assets/media/catalogue/video-wall.webp';
-import catEscritura     from '../assets/media/catalogue/souvenirs-escritura.webp';
-import catIndumentaria  from '../assets/media/catalogue/souvenirs-indumentaria.webp';
-import catAccesorios    from '../assets/media/catalogue/souvenirs-accesorios.webp';
-import catEventos       from '../assets/media/catalogue/souvenirs-eventos.webp';
-import catPapeleria     from '../assets/media/catalogue/print-papeleria.webp';
-import catImpresos      from '../assets/media/catalogue/print-impresos.webp';
-import catVehicular     from '../assets/media/catalogue/vehicular.webp';
+// Exterior Signage — from ServicesPage ExteriorSection
+import rotuloClasicoImg  from '../assets/media/exterior/rotulo-clasico.png';
+import rotuloLuminosoImg from '../assets/media/exterior/rotulo-luminoso.png';
+import letras3dImg       from '../assets/media/exterior/letras-3d.png';
+import terminado1Img     from '../assets/media/exterior/terminado-1.png';
+import terminado2Img     from '../assets/media/exterior/terminado-2.png';
+import terminado3Img     from '../assets/media/exterior/terminado-3.png';
+import popupSuzukiImg    from '../assets/media/exterior/popup-suzuki.jpg';
+import rollupObiImg      from '../assets/media/exterior/rollup-obi.jpg';
+import vehicularImg      from '../assets/media/catalogue/vehicular.webp';
+
+// Digital — from ServicesPage DigitalSection
+import pantalla1Img  from '../assets/media/digital/pantalla-1.png';
+import pantalla2Img  from '../assets/media/digital/pantalla-2.png';
+import pantalla3Img  from '../assets/media/digital/pantalla-3.png';
+import pantalla4Img  from '../assets/media/digital/pantalla-4.png';
+import totem1Img     from '../assets/media/digital/totem-1.png';
+import totem2Img     from '../assets/media/digital/totem-2.png';
+import totem3Img     from '../assets/media/digital/totem-3.png';
+import totem4Img     from '../assets/media/digital/totem-4.png';
+import videoWall1Img from '../assets/media/digital/video-wall-1.png';
+import videoWall2Img from '../assets/media/digital/video-wall-2.png';
+import videoWall3Img from '../assets/media/digital/video-wall-3.png';
+import videoWall4Img from '../assets/media/digital/video-wall-4.png';
+import videoWall5Img from '../assets/media/digital/video-wall-5.png';
+import videoWall6Img from '../assets/media/digital/video-wall-6.png';
+
+// Souvenirs — from ServicesPage SouvenirsSection
+import escritura1Img    from '../assets/media/catalogue/escritura-1.png';
+import escritura2Img    from '../assets/media/catalogue/escritura-2.png';
+import escritura3Img    from '../assets/media/catalogue/escritura-3.png';
+import escritura4Img    from '../assets/media/catalogue/escritura-4.png';
+import escritura5Img    from '../assets/media/catalogue/escritura-5.png';
+import escritura6Img    from '../assets/media/catalogue/escritura-6.png';
+import indumentaria1Img from '../assets/media/catalogue/indumentaria-1.png';
+import indumentaria2Img from '../assets/media/catalogue/indumentaria-2.png';
+import indumentaria3Img from '../assets/media/catalogue/indumentaria-3.png';
+import indumentaria4Img from '../assets/media/catalogue/indumentaria-4.png';
+import indumentaria5Img from '../assets/media/catalogue/indumentaria-5.png';
+import accesorios1Img   from '../assets/media/catalogue/accesorios-new-1.png';
+import accesorios2Img   from '../assets/media/catalogue/accesorios-new-2.png';
+import accesorios3Img   from '../assets/media/catalogue/accesorios-new-3.png';
+import accesorios4Img   from '../assets/media/catalogue/accesorios-new-4.png';
+import accesorios5Img   from '../assets/media/catalogue/accesorios-new-5.png';
+import accesorios6Img   from '../assets/media/catalogue/accesorios-new-6.png';
+import carpa1Img        from '../assets/media/catalogue/carpa-1.png';
+
+// Print — from ServicesPage PrintSection
+import papeleria1Img from '../assets/media/catalogue/papeleria-1.png';
+import papeleria2Img from '../assets/media/catalogue/papeleria-2.png';
 
 // Pop-up and roll-up photos loaded dynamically
 type ImageMod = { default: string };
@@ -42,10 +80,22 @@ const CLIENT_LOGOS = [
   { src: toscana,     alt: 'Toscana'     },
 ];
 
-const CATALOGUE_IMAGES = [
-  catRotulos, catPantallas, catTotems, catVideoWall,
-  catEscritura, catIndumentaria, catAccesorios,
-  catEventos, catPapeleria, catImpresos, catVehicular,
+const SERVICES_IMAGES = [
+  // Exterior Signage
+  rotuloClasicoImg, rotuloLuminosoImg, letras3dImg,
+  terminado1Img, terminado2Img, terminado3Img,
+  popupSuzukiImg, rollupObiImg, vehicularImg,
+  // Digital
+  pantalla1Img, pantalla2Img, pantalla3Img, pantalla4Img,
+  totem1Img, totem2Img, totem3Img, totem4Img,
+  videoWall1Img, videoWall2Img, videoWall3Img, videoWall4Img, videoWall5Img, videoWall6Img,
+  // Souvenirs
+  escritura1Img, escritura2Img, escritura3Img, escritura4Img, escritura5Img, escritura6Img,
+  indumentaria1Img, indumentaria2Img, indumentaria3Img, indumentaria4Img, indumentaria5Img,
+  accesorios1Img, accesorios2Img, accesorios3Img, accesorios4Img, accesorios5Img, accesorios6Img,
+  carpa1Img,
+  // Print
+  papeleria1Img, papeleria2Img,
 ];
 
 const PORTFOLIO_SCHEMA = {
@@ -60,7 +110,7 @@ const PORTFOLIO_SCHEMA = {
   ],
 };
 
-/** Portfolio page — client logos, pop-up and roll-up infinite carousels, catalogue variety */
+/** Portfolio page — client logos, pop-up and roll-up infinite carousels, services variety */
 export function PortfolioPage() {
   const { t } = useTranslation();
 
@@ -120,12 +170,12 @@ export function PortfolioPage() {
         <InfiniteCarousel images={rollupImages} direction="left" speed={45} imageHeight={320} />
       </section>
 
-      {/* Variedad de trabajos — static paginated carousel */}
+      {/* Variedad de trabajos — full-bleed single-image carousel */}
       <section className="py-12 bg-jm-bg-section">
         <p className="font-inter font-semibold text-jm-primary text-[11px] tracking-[2.2px] uppercase leading-[16.5px] mb-6 px-6 max-w-lg mx-auto lg:max-w-3xl">
           {t('portfolio.variety_label')}
         </p>
-        <StaticCarousel images={CATALOGUE_IMAGES} imageHeight={280} />
+        <StaticCarousel images={SERVICES_IMAGES} imageHeight={320} />
       </section>
     </main>
   );
