@@ -58,7 +58,8 @@ export function PrecisionSection() {
                   src={f.image}
                   alt={f.imageAlt}
                   className="w-full h-full object-cover"
-                  loading="lazy"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
             </div>

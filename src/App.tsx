@@ -1,5 +1,6 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './lib/i18n';
 import './index.css';
 import { Header } from './components/layout/Header';
@@ -10,12 +11,19 @@ const ServicesPage = lazy(() => import('./pages/ServicesPage').then(m => ({ defa
 const PortfolioPage = lazy(() => import('./pages/PortfolioPage').then(m => ({ default: m.PortfolioPage })));
 const ContactPage  = lazy(() => import('./pages/ContactPage').then(m => ({ default: m.ContactPage })));
 
+function LangSync() {
+  const { i18n } = useTranslation();
+  useEffect(() => { document.documentElement.lang = i18n.language; }, [i18n.language]);
+  return null;
+}
+
 /** Root application component — BrowserRouter, shared layout, and all routes */
 export function App() {
   return (
     <BrowserRouter>
+      <LangSync />
       <Header />
-      <Suspense fallback={null}>
+      <Suspense fallback={<div className="min-h-screen bg-jm-bg" />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />

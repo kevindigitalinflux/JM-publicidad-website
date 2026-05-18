@@ -41,11 +41,16 @@ export function HeroSection() {
     const tryInit = () => {
       if (typeof window.UnicornStudio?.init === 'function') {
         window.UnicornStudio.init();
-      } else {
-        setTimeout(tryInit, 50);
       }
     };
-    tryInit();
+
+    // SDK already loaded (cached page or fast connection) — init immediately.
+    // Otherwise wait for the custom event dispatched by the loader script.
+    if (window.__unicornSDKReady) {
+      tryInit();
+    } else {
+      document.addEventListener('unicorn:ready', tryInit, { once: true });
+    }
 
     // Unicorn Studio injects a fixed-position badge that z-index alone cannot beat.
     // Watch for it and suppress immediately on insertion.
@@ -68,13 +73,16 @@ export function HeroSection() {
     });
     observer.observe(document.body, { childList: true, subtree: true });
 
-    return () => observer.disconnect();
+    return () => {
+      document.removeEventListener('unicorn:ready', tryInit);
+      observer.disconnect();
+    };
   }, [isMobile]);
 
   // Hero entrance timeline
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: 0.2 });
+      const tl = gsap.timeline();
 
       tl.from('.hero-headline span', {
         opacity: 0,
