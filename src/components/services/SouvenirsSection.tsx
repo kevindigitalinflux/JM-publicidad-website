@@ -10,8 +10,12 @@ import indumentaria2Img from '../../assets/media/catalogue/indumentaria-2.png';
 import indumentaria3Img from '../../assets/media/catalogue/indumentaria-3.png';
 import indumentaria4Img from '../../assets/media/catalogue/indumentaria-4.png';
 import indumentaria5Img from '../../assets/media/catalogue/indumentaria-5.png';
-import accesorios1Img from '../../assets/media/catalogue/accesorios-1.png';
-import accesorios2Img from '../../assets/media/catalogue/accesorios-2.png';
+import accesorios1Img from '../../assets/media/catalogue/accesorios-new-1.png';
+import accesorios2Img from '../../assets/media/catalogue/accesorios-new-2.png';
+import accesorios3Img from '../../assets/media/catalogue/accesorios-new-3.png';
+import accesorios4Img from '../../assets/media/catalogue/accesorios-new-4.png';
+import accesorios5Img from '../../assets/media/catalogue/accesorios-new-5.png';
+import accesorios6Img from '../../assets/media/catalogue/accesorios-new-6.png';
 import eventosImg from '../../assets/media/catalogue/souvenirs-eventos.webp';
 
 /** Souvenirs Publicitarios — Stationery, Clothing, Accessories, Events */
@@ -67,17 +71,21 @@ export function SouvenirsSection() {
         <div>
           <SubSectionLabel label={s('accesorios_label')} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 gap-4 order-last md:order-none">
+              <img src={accesorios1Img} alt="Gorras publicitarias — JM Publicidad"      className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={accesorios2Img} alt="Tomatodos — JM Publicidad"                 className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={accesorios3Img} alt="Jarros publicitarios — JM Publicidad"      className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={accesorios4Img} alt="Pulseras publicitarias — JM Publicidad"    className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={accesorios5Img} alt="Mouse pad publicitario — JM Publicidad"    className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={accesorios6Img} alt="Bolsos publicitarios — JM Publicidad"      className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
               <ProductCard title={s('gorras_title')} specs={[s('gorras_spec_1'), s('gorras_spec_2')]} />
               <ProductCard title={s('tomatodos_title')} specs={[s('tomatodos_spec_1'), s('tomatodos_spec_2')]} />
               <ProductCard title={s('jarros_title')} specs={[s('jarros_spec_1'), s('jarros_spec_2')]} />
               <ProductCard title={s('pulseras_title')} specs={[s('pulseras_spec_1'), s('pulseras_spec_2')]} />
               <ProductCard title={s('mousepad_title')} specs={[s('mousepad_spec_1'), s('mousepad_spec_2')]} />
               <ProductCard title={s('bolsos_title')} specs={[s('bolsos_spec_1'), s('bolsos_spec_2')]} />
-            </div>
-            <div className="grid grid-cols-2 gap-3">
-              <img src={accesorios1Img} alt="Accesorios publicitarios — JM Publicidad" className="reveal-img rounded-xl w-full object-cover aspect-square mix-blend-multiply" loading="lazy" />
-              <img src={accesorios2Img} alt="Accesorios publicitarios — JM Publicidad" className="reveal-img rounded-xl w-full object-cover aspect-square mix-blend-multiply" loading="lazy" />
             </div>
           </div>
         </div>
