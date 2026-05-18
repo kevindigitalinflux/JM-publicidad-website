@@ -7,6 +7,9 @@ import { useImageReveal } from '../../hooks/useScrollReveal';
 import rotuloClasicoImg from '../../assets/media/exterior/rotulo-clasico.png';
 import rotuloLuminosoImg from '../../assets/media/exterior/rotulo-luminoso.png';
 import letras3dImg from '../../assets/media/exterior/letras-3d.png';
+import terminado1Img from '../../assets/media/exterior/terminado-1.png';
+import terminado2Img from '../../assets/media/exterior/terminado-2.png';
+import terminado3Img from '../../assets/media/exterior/terminado-3.png';
 import popupSuzuki from '../../assets/media/exterior/popup-suzuki.jpg';
 import rollupObi from '../../assets/media/exterior/rollup-obi.jpg';
 import vehicularImg from '../../assets/media/catalogue/vehicular.webp';
@@ -30,25 +33,19 @@ export function ExteriorSection() {
         {/* Rótulos */}
         <div>
           <SubSectionLabel label={e('rotulos_label')} />
-          <div className="flex flex-col gap-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-              <div className="grid grid-cols-1 gap-4">
-                <ProductCard title={e('clasicos_title')} specs={[e('clasicos_spec_1'), e('clasicos_spec_2'), e('clasicos_spec_3')]} />
-                <ProductCard title={e('luminosos_title')} specs={[e('luminosos_spec_1'), e('luminosos_spec_2'), e('luminosos_spec_3')]} />
-                <ProductCard title={e('letras3d_title')} specs={[e('letras3d_spec_1'), e('letras3d_spec_2'), e('letras3d_spec_3')]} />
-              </div>
-              <div className="grid grid-cols-1 gap-4">
-                <img src={rotuloClasicoImg} alt="Rótulo clásico — JM Publicidad"   className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
-                <img src={rotuloLuminosoImg} alt="Rótulo luminoso — JM Publicidad" className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
-                <img src={letras3dImg}       alt="Letras 3D — JM Publicidad"        className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+            <div className="grid grid-cols-1 gap-4">
+              <ProductCard title={e('clasicos_title')} specs={[e('clasicos_spec_1'), e('clasicos_spec_2'), e('clasicos_spec_3')]} />
+              <ProductCard title={e('luminosos_title')} specs={[e('luminosos_spec_1'), e('luminosos_spec_2'), e('luminosos_spec_3')]} />
+              <ProductCard title={e('letras3d_title')} specs={[e('letras3d_spec_1'), e('letras3d_spec_2'), e('letras3d_spec_3')]} />
             </div>
-            <div className="flex flex-wrap gap-2">
-              {[e('terminado_1'), e('terminado_2'), e('terminado_3')].map((fin) => (
-                <span key={fin} className="bg-jm-primary/10 text-jm-primary font-inter text-[10px] font-semibold px-3 py-1 rounded-full tracking-wide">
-                  {fin}
-                </span>
-              ))}
+            <div className="grid grid-cols-3 gap-3">
+              <img src={rotuloClasicoImg} alt="Rótulo clásico — JM Publicidad"    className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={rotuloLuminosoImg} alt="Rótulo luminoso — JM Publicidad"  className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={letras3dImg}       alt="Letras 3D — JM Publicidad"         className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={terminado1Img}     alt="Terminado 1 — JM Publicidad"       className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={terminado2Img}     alt="Terminado 2 — JM Publicidad"       className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              <img src={terminado3Img}     alt="Terminado 3 — JM Publicidad"       className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
             </div>
           </div>
         </div>
