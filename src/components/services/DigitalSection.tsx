@@ -36,7 +36,7 @@ export function DigitalSection() {
         <div>
           <SubSectionLabel label={d('totems_label')} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-            <img src={totemsImg} alt="Tótems LED — JM Publicidad" className="rounded-xl w-full object-cover" loading="lazy" />
+            <img src={totemsImg} alt="Tótems LED — JM Publicidad" className="rounded-xl w-full object-cover order-last md:order-none" loading="lazy" />
             <div className="grid grid-cols-2 gap-4">
               <ProductCard title={d('totem_led_title')} specs={[]} />
               <ProductCard title={d('totem_doble_title')} specs={[]} />

@@ -23,7 +23,7 @@ export function SouvenirsSection() {
         <div>
           <SubSectionLabel label={s('escritura_label')} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               <ProductCard title={s('esferos_title')} specs={[s('esferos_spec_1'), s('esferos_spec_2')]} />
               <ProductCard title={s('vasos_title')} specs={[s('vasos_spec_1'), s('vasos_spec_2')]} />
               <ProductCard title={s('servilletas_title')} specs={[s('servilletas_spec_1'), s('servilletas_spec_2')]} />
@@ -39,7 +39,7 @@ export function SouvenirsSection() {
         <div>
           <SubSectionLabel label={s('indumentaria_label')} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-            <img src={indumentariaImg} alt="Uniformes y deportivos publicitarios — JM Publicidad" className="rounded-xl w-full object-cover" loading="lazy" />
+            <img src={indumentariaImg} alt="Uniformes y deportivos publicitarios — JM Publicidad" className="rounded-xl w-full object-cover order-last md:order-none" loading="lazy" />
             <div className="grid grid-cols-2 gap-4">
               <ProductCard title={s('uniformes_title')} specs={[s('uniformes_spec_1'), s('uniformes_spec_2'), s('uniformes_spec_3')]} />
               <ProductCard title={s('deportivos_title')} specs={[s('deportivos_spec_1'), s('deportivos_spec_2'), s('deportivos_spec_3')]} />
@@ -54,7 +54,7 @@ export function SouvenirsSection() {
         <div>
           <SubSectionLabel label={s('accesorios_label')} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               <ProductCard title={s('gorras_title')} specs={[s('gorras_spec_1'), s('gorras_spec_2')]} />
               <ProductCard title={s('tomatodos_title')} specs={[s('tomatodos_spec_1'), s('tomatodos_spec_2')]} />
               <ProductCard title={s('jarros_title')} specs={[s('jarros_spec_1'), s('jarros_spec_2')]} />
@@ -70,7 +70,7 @@ export function SouvenirsSection() {
         <div>
           <SubSectionLabel label={s('eventos_label')} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-            <img src={eventosImg} alt="Carpas y banderas publicitarias — JM Publicidad" className="rounded-xl w-full object-cover" loading="lazy" />
+            <img src={eventosImg} alt="Carpas y banderas publicitarias — JM Publicidad" className="rounded-xl w-full object-cover order-last md:order-none" loading="lazy" />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <ProductCard title={s('carpas_title')} specs={[s('carpas_spec_1'), s('carpas_spec_2')]} />
               <ProductCard title={s('banderas_title')} specs={[s('banderas_spec_1'), s('banderas_spec_2')]} />

@@ -50,9 +50,10 @@ export function Header() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-[5px] p-1"
+          className="md:hidden flex flex-col items-center justify-center gap-[5px] min-w-[44px] min-h-[44px] -mr-2"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
         >
           <span className="block w-5 h-[2px] bg-jm-heading rounded-full" />
           <span className="block w-5 h-[2px] bg-jm-heading rounded-full" />

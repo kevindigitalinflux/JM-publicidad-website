@@ -49,7 +49,7 @@ export function ExteriorSection() {
         <div>
           <SubSectionLabel label={e('displays_label')} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-3 order-last md:order-none">
               <img src={popupSuzuki} alt="Pop-up Suzuki — JM Publicidad" className="rounded-xl object-cover aspect-[3/4] w-full" loading="lazy" />
               <img src={rollupObi} alt="Roll-up OBI — JM Publicidad" className="rounded-xl object-cover aspect-[3/4] w-full" loading="lazy" />
             </div>

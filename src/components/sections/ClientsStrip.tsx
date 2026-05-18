@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import toscana from '../../assets/clients/toscana.webp';
 import sucesores from '../../assets/clients/sucesores.png';
 import adelca from '../../assets/clients/adelca.webp';
@@ -43,15 +44,30 @@ function LogoTrack() {
 
 /** Infinite logo carousel — overlaps the hero bottom to cover the Unicorn Studio watermark */
 export function ClientsStrip() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const track = trackRef.current;
+    if (!container || !track) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { track.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused'; },
+      { threshold: 0 }
+    );
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="relative z-10 -mt-16 w-full bg-jm-bg-section border-t border-b border-[#e4e2df] pt-10 pb-10">
+    <section className="relative z-[9999] -mt-4 md:-mt-16 w-full bg-jm-bg-section border-t border-b border-[#e4e2df] pt-10 pb-10">
       {/* Label */}
       <p className="text-center font-inter font-medium text-jm-body text-xs tracking-[0.2em] uppercase mb-8">
         Algunos de nuestros Clientes
       </p>
 
       {/* Carousel wrapper */}
-      <div className="relative overflow-hidden">
+      <div ref={containerRef} className="relative overflow-hidden">
         {/* Left fade */}
         <div
           className="absolute inset-y-0 left-0 w-20 z-10 pointer-events-none"
@@ -67,11 +83,13 @@ export function ClientsStrip() {
 
         {/* Scrolling track — two copies for seamless loop */}
         <div
+          ref={trackRef}
           style={{
             display: 'flex',
             width: 'max-content',
             animation: 'jm-scroll-left 28s linear infinite',
             willChange: 'transform',
+            animationPlayState: 'paused',
           }}
         >
           <LogoTrack />

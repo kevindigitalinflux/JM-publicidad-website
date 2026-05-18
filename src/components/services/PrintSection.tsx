@@ -21,7 +21,7 @@ export function PrintSection() {
         <div>
           <SubSectionLabel label={p('papeleria_label')} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-            <img src={papeleriaImg} alt="Papelería corporativa — JM Publicidad" className="rounded-xl w-full object-cover" loading="lazy" />
+            <img src={papeleriaImg} alt="Papelería corporativa — JM Publicidad" className="rounded-xl w-full object-cover order-last md:order-none" loading="lazy" />
             <div className="grid grid-cols-2 gap-4">
               <ProductCard title={p('tarjetas_title')} specs={[p('tarjetas_spec_1'), p('tarjetas_spec_2'), p('tarjetas_spec_3')]} />
               <ProductCard title={p('hojas_title')} specs={[p('hojas_spec_1'), p('hojas_spec_2')]} />

@@ -127,7 +127,7 @@ export function ContactPage() {
 
       {/* Hero */}
       <section className="px-6 pt-10 pb-12 max-w-lg mx-auto lg:max-w-3xl">
-        <h1 className="font-manrope font-extrabold text-jm-primary text-[56px] leading-[56px] tracking-[-1.4px] mb-4">
+        <h1 className="font-manrope font-extrabold text-jm-primary text-[36px] leading-[40px] tracking-[-0.9px] mb-4 sm:text-[56px] sm:leading-[56px] sm:tracking-[-1.4px]">
           {t('contact.title')}
         </h1>
         <p className="font-inter text-jm-body text-base leading-6">
@@ -137,7 +137,7 @@ export function ContactPage() {
 
       {/* Form */}
       <section className="px-6 pb-12 max-w-lg mx-auto lg:max-w-3xl">
-        <div className="bg-jm-bg-section rounded-lg px-8 pt-8 pb-12">
+        <div className="bg-jm-bg-section rounded-lg px-5 pt-8 pb-12 sm:px-8">
           {status === 'success' ? (
             <div className="bg-jm-primary text-white rounded-lg p-10 text-center">
               <p className="font-manrope font-bold text-xl">{t('contact.success')}</p>

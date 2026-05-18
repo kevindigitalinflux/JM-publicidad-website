@@ -15,7 +15,13 @@
   will-change: transform;
 }
 .jm-carousel-track:hover {
-  animation-play-state: paused;
+  animation-play-state: paused !important;
+}
+
+/* Hide Unicorn Studio attribution badge */
+a[href*="unicornstudio"],
+a[href*="unicorn.studio"] {
+  display: none !important;
 }
 
 :root {

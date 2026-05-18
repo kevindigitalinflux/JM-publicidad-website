@@ -37,13 +37,13 @@ export function ServicesSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-jm-bg px-6 py-24">
+    <section className="bg-jm-bg px-6 py-16 md:py-24">
       <div className="max-w-6xl mx-auto">
         <h2 className="font-manrope font-extrabold text-jm-heading text-[30px] tracking-[-0.025em] leading-[36px] mb-8">
           {t('services.title')}
         </h2>
 
-        <div className="grid grid-cols-2 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
           {cards.map(({ key, bg, text, image }) => (
             <Link
               key={key}

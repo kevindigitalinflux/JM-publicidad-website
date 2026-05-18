@@ -27,7 +27,7 @@ export function PrecisionSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-jm-bg-section px-6 py-24">
+    <section className="bg-jm-bg-section px-6 py-16 md:py-24">
       <div className="max-w-6xl mx-auto">
         {/* Section heading */}
         <div className="flex items-center gap-4 mb-12">

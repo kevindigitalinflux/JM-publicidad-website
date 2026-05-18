@@ -7,7 +7,7 @@ export function CtaSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-jm-primary relative overflow-hidden py-24 px-6">
+    <section className="bg-jm-primary relative overflow-hidden py-16 px-6 md:py-24">
       {/* Client installation photo — right side, blended into green at 13% opacity */}
       <img
         src={ctaBg}
