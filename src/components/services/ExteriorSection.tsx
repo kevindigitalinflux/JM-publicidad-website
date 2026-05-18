@@ -27,14 +27,21 @@ export function ExteriorSection() {
 
       <div className="max-w-6xl mx-auto px-6 pt-10 flex flex-col gap-12">
 
-        {/* Rótulos — cards with individual photos */}
+        {/* Rótulos */}
         <div>
           <SubSectionLabel label={e('rotulos_label')} />
           <div className="flex flex-col gap-4">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <ProductCard title={e('clasicos_title')} specs={[e('clasicos_spec_1'), e('clasicos_spec_2'), e('clasicos_spec_3')]} image={rotuloClasicoImg} imageAlt="Rótulo clásico — JM Publicidad" />
-              <ProductCard title={e('luminosos_title')} specs={[e('luminosos_spec_1'), e('luminosos_spec_2'), e('luminosos_spec_3')]} image={rotuloLuminosoImg} imageAlt="Rótulo luminoso — JM Publicidad" />
-              <ProductCard title={e('letras3d_title')} specs={[e('letras3d_spec_1'), e('letras3d_spec_2'), e('letras3d_spec_3')]} image={letras3dImg} imageAlt="Letras 3D — JM Publicidad" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+              <div className="grid grid-cols-1 gap-4">
+                <ProductCard title={e('clasicos_title')} specs={[e('clasicos_spec_1'), e('clasicos_spec_2'), e('clasicos_spec_3')]} />
+                <ProductCard title={e('luminosos_title')} specs={[e('luminosos_spec_1'), e('luminosos_spec_2'), e('luminosos_spec_3')]} />
+                <ProductCard title={e('letras3d_title')} specs={[e('letras3d_spec_1'), e('letras3d_spec_2'), e('letras3d_spec_3')]} />
+              </div>
+              <div className="grid grid-cols-1 gap-4">
+                <img src={rotuloClasicoImg} alt="Rótulo clásico — JM Publicidad"   className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+                <img src={rotuloLuminosoImg} alt="Rótulo luminoso — JM Publicidad" className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+                <img src={letras3dImg}       alt="Letras 3D — JM Publicidad"        className="reveal-img rounded-xl w-full h-28 object-contain mix-blend-multiply" loading="lazy" />
+              </div>
             </div>
             <div className="flex flex-wrap gap-2">
               {[e('terminado_1'), e('terminado_2'), e('terminado_3')].map((fin) => (
