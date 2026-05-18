@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { CategoryHeader } from './CategoryHeader';
 import { SubSectionLabel } from './SubSectionLabel';
 import { ProductCard } from './ProductCard';
+import { useImageReveal } from '../../hooks/useScrollReveal';
 import popupSuzuki from '../../assets/media/exterior/popup-suzuki.jpg';
 import rollupObi from '../../assets/media/exterior/rollup-obi.jpg';
 import vehicularImg from '../../assets/media/catalogue/vehicular.webp';
@@ -12,9 +13,10 @@ import rotulosImg from '../../assets/media/catalogue/rotulos.webp';
 export function ExteriorSection() {
   const { t } = useTranslation();
   const e = (k: string) => t(`services_page.exterior.${k}`);
+  const sectionRef = useImageReveal<HTMLElement>();
 
   return (
-    <section className="pb-16 bg-jm-bg">
+    <section ref={sectionRef} className="pb-16 bg-jm-bg">
       <CategoryHeader
         tag={t('services_page.label')}
         title={e('title')}
@@ -41,7 +43,7 @@ export function ExteriorSection() {
                 ))}
               </div>
             </div>
-            <img src={rotulosImg} alt="Rótulos publicitarios — JM Publicidad" className="rounded-xl w-full object-cover" loading="lazy" />
+            <img src={rotulosImg} alt="Rótulos publicitarios — JM Publicidad" className="reveal-img rounded-xl w-full object-cover" loading="lazy" />
           </div>
         </div>
 
@@ -50,8 +52,8 @@ export function ExteriorSection() {
           <SubSectionLabel label={e('displays_label')} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
             <div className="grid grid-cols-2 gap-3 order-last md:order-none">
-              <img src={popupSuzuki} alt="Pop-up Suzuki — JM Publicidad" className="rounded-xl object-cover aspect-[3/4] w-full" loading="lazy" />
-              <img src={rollupObi} alt="Roll-up OBI — JM Publicidad" className="rounded-xl object-cover aspect-[3/4] w-full" loading="lazy" />
+              <img src={popupSuzuki} alt="Pop-up Suzuki — JM Publicidad" className="reveal-img rounded-xl object-cover aspect-[3/4] w-full" loading="lazy" />
+              <img src={rollupObi} alt="Roll-up OBI — JM Publicidad" className="reveal-img rounded-xl object-cover aspect-[3/4] w-full" loading="lazy" />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <ProductCard title={e('rollups_title')} specs={[e('rollups_spec_1'), e('rollups_spec_2'), e('rollups_spec_3')]} />
@@ -79,7 +81,7 @@ export function ExteriorSection() {
                 ))}
               </ul>
             </div>
-            <img src={vehicularImg} alt="Brandeo vehicular — JM Publicidad" className="rounded-xl object-cover w-full aspect-video" loading="lazy" />
+            <img src={vehicularImg} alt="Brandeo vehicular — JM Publicidad" className="reveal-img rounded-xl object-cover w-full aspect-video" loading="lazy" />
           </div>
         </div>
 

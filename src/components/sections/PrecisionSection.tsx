@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { useImageReveal } from '../../hooks/useScrollReveal';
 import precisionPrint  from '../../assets/sections/precision-print.webp';
 import precisionFinish from '../../assets/sections/precision-finish.webp';
 
@@ -25,9 +26,10 @@ const features = [
 /** "Producción que se nota" — two-feature value proposition with reference images */
 export function PrecisionSection() {
   const { t } = useTranslation();
+  const sectionRef = useImageReveal<HTMLElement>();
 
   return (
-    <section className="bg-jm-bg-section px-6 py-16 md:py-24">
+    <section ref={sectionRef} className="bg-jm-bg-section px-6 py-16 md:py-24">
       <div className="max-w-6xl mx-auto">
         {/* Section heading */}
         <div className="flex items-center gap-4 mb-12">
@@ -51,7 +53,7 @@ export function PrecisionSection() {
                 {t(f.bodyKey)}
               </p>
               {/* Reference photo */}
-              <div className="mt-2 rounded-xl overflow-hidden aspect-[4/3]">
+              <div className="reveal-img mt-2 rounded-xl overflow-hidden aspect-[4/3]">
                 <img
                   src={f.image}
                   alt={f.imageAlt}

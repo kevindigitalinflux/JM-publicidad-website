@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { InfiniteCarousel } from '../components/portfolio/InfiniteCarousel';
+import { StaticCarousel } from '../components/portfolio/StaticCarousel';
 import { SEO } from '../components/SEO';
 import { SchemaOrg } from '../components/SchemaOrg';
 
@@ -119,12 +120,12 @@ export function PortfolioPage() {
         <InfiniteCarousel images={rollupImages} direction="left" speed={45} imageHeight={320} />
       </section>
 
-      {/* Variedad de trabajos — catalogue product images */}
+      {/* Variedad de trabajos — static paginated carousel */}
       <section className="py-12 bg-jm-bg-section">
         <p className="font-inter font-semibold text-jm-primary text-[11px] tracking-[2.2px] uppercase leading-[16.5px] mb-6 px-6 max-w-lg mx-auto lg:max-w-3xl">
           {t('portfolio.variety_label')}
         </p>
-        <InfiniteCarousel images={CATALOGUE_IMAGES} direction="right" speed={55} imageHeight={280} />
+        <StaticCarousel images={CATALOGUE_IMAGES} imageHeight={280} />
       </section>
     </main>
   );

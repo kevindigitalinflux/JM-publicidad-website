@@ -37,3 +37,37 @@ export function useScrollReveal<T extends HTMLElement = HTMLElement>() {
 
   return ref;
 }
+
+/** Fade-up reveal for all .reveal-img elements inside the returned ref container */
+export function useImageReveal<T extends HTMLElement = HTMLElement>() {
+  const ref = useRef<T>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const ctx = gsap.context(() => {
+      const imgs = gsap.utils.toArray<HTMLElement>('.reveal-img', el);
+      if (!imgs.length) return;
+
+      gsap.set(imgs, { opacity: 0, y: 24 });
+
+      ScrollTrigger.batch(imgs, {
+        onEnter: (batch) =>
+          gsap.to(batch, {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            stagger: 0.12,
+            ease: 'power2.out',
+          }),
+        start: 'top 88%',
+        once: true,
+      });
+    }, el);
+
+    return () => ctx.revert();
+  }, []);
+
+  return ref;
+}
