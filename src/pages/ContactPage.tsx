@@ -93,7 +93,26 @@ export function ContactPage() {
 
     if (error) { setStatus('error'); return; }
 
-    // Email notification + auto-reply fired automatically via Supabase Database Webhook
+    // Immediate client notification via Web3Forms (fire-and-forget)
+    const w3Key = import.meta.env.VITE_WEB3FORMS_KEY as string | undefined;
+    if (w3Key) {
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: w3Key,
+          subject: `Nueva consulta: ${form.service || 'JM Publicidad'} — ${form.name.trim()}`,
+          name: form.name.trim(),
+          email: form.email.trim(),
+          Empresa: form.company || '—',
+          Servicio: form.service || '—',
+          Mensaje: form.message.trim(),
+          Presupuesto: form.budget_range || '—',
+        }),
+      }).catch(() => {});
+    }
+
+    // Auto-reply + weekly digest fired via Supabase Database Webhook → Edge Function
     setStatus('success');
     setForm(INITIAL_FORM);
   }
