@@ -93,25 +93,7 @@ export function ContactPage() {
 
     if (error) { setStatus('error'); return; }
 
-    // Forward enquiry to jmpublicidad@outlook.es via Web3Forms
-    const w3Key = import.meta.env.VITE_WEB3FORMS_KEY as string | undefined;
-    if (w3Key) {
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          access_key: w3Key,
-          subject: `Nueva consulta — ${form.service || 'JM Publicidad'}`,
-          name: form.name.trim(),
-          email: form.email.trim(),
-          empresa: form.company || '—',
-          servicio: form.service || '—',
-          mensaje: form.message.trim(),
-          presupuesto: form.budget_range || '—',
-        }),
-      }).catch(() => {}); // non-blocking — record is already in Supabase
-    }
-
+    // Email notification + auto-reply fired automatically via Supabase Database Webhook
     setStatus('success');
     setForm(INITIAL_FORM);
   }
